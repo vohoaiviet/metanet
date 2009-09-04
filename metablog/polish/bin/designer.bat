@@ -1,0 +1,2 @@
+REM Start the editor for binary data files:
+java -classpath "C:\Programme\J2ME-Polish 2.0.4/lib/enough-j2mepolish-build-common.jar;C:\Programme\J2ME-Polish 2.0.4/lib/enough-j2mepolish-app-designer.jar;$CLASSPATH" de.enough.polish.designer.StandaloneDesigner --polish.home "C:\Programme\J2ME-Polish 2.0.4" %1 %2 %3

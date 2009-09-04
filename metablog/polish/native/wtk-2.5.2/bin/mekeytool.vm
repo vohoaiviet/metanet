@@ -1,0 +1,1 @@
+C:\PROGRA~1\Java\JDK15~1.0_1\bin\java -Dkvem.home="%KVEM_HOME%" -cp "%KVEM_HOME%/bin/MEKeyTool.jar";"%KVEM_HOME%/wtklib/kenv.zip" com.sun.midp.mekeytool.WTKMain

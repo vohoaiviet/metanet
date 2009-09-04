@@ -1,0 +1,182 @@
+<!-- This file controls the build process -->
+
+<project name="MetaBlog" default="j2mepolish">
+
+	<!-- Definition of the resource and distribution directories -->
+	<property name="dir.resource" value="res" />
+	<property name="dir.build" value="build" />
+	<property name="dir.dist" value="dist" />
+	<property name="dir.source" value="src" />
+	
+	<property name="config.emulate" value="true" />
+	<property name="config.polishgui" value="true" />
+	<property name="config.optimized" value="true" />
+	<property name="config.device" value="Nokia/E51" />
+	
+	<property name="config.client.name" value="MetaBlog" />
+	<property name="config.client.version" value="1.0.0" />
+	<property name="config.client.locale" value="en_US" />
+	<property name="config.client.icon" value="icon.png" />
+	<property name="config.client.jar.filename" value="${config.client.name}-${config.client.version}.jar" />
+
+	<!-- map service TODO -->
+	<property name="config.metaDonServer" value="mem.ipsquare.at"/>
+	<property name="config.metaDonServerOTA" value="http://${config.metaDonServer}/client/"/>
+	<property name="config.metaDonService" value="/mts-mts/HandsetService"/>
+	<property name="config.metaDonNamespace" value="http://service.mts.mobilkom.at/"/>
+	
+	<!-- set static environment props - polish version 2.0.4 -->
+	<property name="polish.home" location="${basedir}/polish" />
+	<property name="wtk.home" value="${polish.home}/native/wtk-2.5.2" />
+
+	<!-- emulators with local references -->
+	<property name="series60.home" value="C:/Programme/S60/devices/" />
+	<property name="series40.home" value="C:/Programme/S60/Devices" />
+	<property name="nokia.home" value="C:/Programme/S60/devices/" />
+	
+	<property name="company.name" value="MetaDon" />
+	<property name="company.url" value="www.metadon.org" />
+
+	<!-- BUILD TARGETS -->
+	<target name="init" depends="clean">
+		<echo message="Init Target" />
+		<mkdir dir="${dir.build}" />
+		<mkdir dir="${dir.dist}" />
+
+		<!-- Definition of the J2ME Polish task -->
+		<taskdef name="j2mepolish" classname="de.enough.polish.ant.PolishTask" classpath="${polish.home}/lib/enough-j2mepolish-build.jar:
+			${polish.home}/lib/jdom.jar:
+			${polish.home}/lib/proguard.jar:
+			${polish.home}/lib/yguard-lib.jar" />
+
+		<chmod perm="777">
+			<fileset dir="${wtk.home}/bin" />
+		</chmod>
+	</target>
+
+	<!-- In this target the J2ME Polish task is used.             -->
+	<!-- It has 3 sections:                                       -->
+	<!--    1. The info-section defines some general information  -->
+	<!--    2. The deviceRequirements-section chooses the devices -->
+	<!--       for which the application is optimized.            -->
+	<!--    3. The build-section controls the actual build        -->
+	<!--       process.                                           -->
+	<target name="j2mepolish" depends="init" description="This is the controller for the J2ME build process.">
+		<j2mepolish>
+			<!-- general settings (basic JAD-attributes) -->
+			<info copyright="Copyright 2009 MetaDon. All rights reserved."
+				description="${config.client.name} for your mobile"
+				icon="${config.client.icon}"
+				infoUrl="${company.url}"
+				jarName="${config.client.jar.filename}"
+				jarUrl="${polish.jarName}"
+				name="${config.client.name}"
+				vendorName="${company.name}"
+				version="${config.client.version}"
+				profile="MIDP-2.0"
+				configuration="CLDC-1.0"
+				deleteConfirm="Remove ${config.client.name}?" />
+
+			<!-- selection of device platform -->
+			<deviceRequirements>
+				<requirement name="Identifier" value="${config.device}" />
+			</deviceRequirements>
+
+			<!-- build settings	-->
+			<!-- menu (renders appl. menus with polish - also fixes flicker problems) -->
+			<build
+				sourcedir="${dir.source}"
+				destdir="${dir.dist}"
+				usePolishGui="${config.polishgui}"
+				fullscreen="menu"
+				workDir="${dir.build}">
+				
+				<!-- include external libraries -->
+				<libraries>
+			    	<library file="${polish.home}/legal/ksoap2-j2me-core-2.1.2.jar"/>
+			    </libraries>
+
+				<!-- MIDLET definition -->
+				<midlet class="org.metadon.control.Controller" name="${config.client.name}" />
+
+				<variables>
+					<!-- polish variables -->
+					<variable name="polish.skipArgumentCheck" value="true" />
+					<variable name="polish.useScrollBar" value="true" />
+					<variable name="polish.List.suppressSelectCommand" value="true" />
+					<variable name="polish.ChoiceGroup.suppressSelectCommand" value="true" />
+					
+					<variable name="polish.TextField.suppressCommands" value="true" />
+					<variable name="polish.TextField.useDirectInput" value="true" />
+					<variable name="polish.TextField.includeInputInfo" value="false"/>
+					<variable name="polish.TextField.showInputInfo" value="true" />
+					<variable name="polish.TextField.textfield-caret-flash" value="true" />
+					<variable name="polish.TextField.showHelp" value="false" />
+					
+					<!-- only valid for menu or fullscreen mode -->
+					<variable name="polish.MenuBar.useExtendedMenuBar" value="true" />
+					<variable name="polish.MenuBar.OptionsPosition" value="right" />
+					<variable name="polish.MenuBar.OkPosition" value="left" />
+					<variable name="polish.MenuBar.PaddingLeft" value="5" />
+					<variable name="polish.MenuBar.PaddingRight" value="5" />
+					<variable name="polish.MenuBar.PaddingTop" value="5" />
+					<variable name="polish.MenuBar.PaddingBottom" value="1" />
+
+				</variables>
+
+				<!-- resources / only included if they are used -->
+				<resources dir="${dir.resource}" excludes="readme.txt, *.definition, .svn, .db">
+					<root dir="${dir.resource}" />
+					<root dir="${dir.resource}/images" />
+					<localization locales="${config.client.locale}" />
+				</resources>
+
+				<!-- enable Java5 syntax -->
+				<postcompiler name="java5" />
+
+				<jad>
+					<filter>
+						MIDlet-Name, MIDlet-Version, 
+						MIDlet-Vendor, MIDlet-Jar-URL, MIDlet-Jar-Size, 
+						MIDlet-Description?, MIDlet-Icon?, MIDlet-Info-URL?,
+						MIDlet-Data-Size?, MIDlet-*, *
+					</filter>
+				</jad>
+				<manifestFilter>
+					Manifest-Version, MIDlet-Name, 
+					MIDlet-1, MIDlet-2?, MIDlet-3?, MIDlet-4?, MIDlet-5?, 
+					MIDlet-Version, MIDlet-Vendor,
+					MicroEdition-Profile, MicroEdition-Configuration,
+					MIDlet-Data-Size?
+				</manifestFilter>
+
+				<!-- OBFUSCATOR  -->
+				<obfuscator name="ProGuard" useDefaultPackage="false" unless="${config.emulate}">
+					<parameter name="optimize" value="${config.optimized}" />
+				</obfuscator>
+
+				<!-- LOGGING -->
+				<!--<debug showLogOnError="true" verbose="false" level="info"></debug>-->
+				<debug if="${config.emulate}" showLogOnError="true" verbose="false" level="info"></debug> 
+
+			</build>
+
+			<!-- EMULATOR -->
+			<emulator
+				wait="true"
+				trace="none"
+				securityDomain="trusted"
+				enableProfiler="true"
+				enableMemoryMonitor="true"
+				enableNetworkMonitor="true"
+				if="${config.emulate}">
+			</emulator>
+		</j2mepolish>
+	</target>
+
+	<target name="clean" description="allows a clean build. You should call [ant clean] whenever you made changes to devices.xml, vendors.xml or groups.xml">
+		<delete dir="${dir.build}" includes="**/*" />
+		<delete dir="${dir.dist}/" includes="**/*" />
+	</target>
+
+</project>

@@ -1,0 +1,1 @@
+C:\PROGRA~1\Java\JDK15~1.0_1\bin\java -Dkvem.home="%KVEM_HOME%" -cp "%KVEM_HOME%/wtklib/kenv.zip";"%KVEM_HOME%/wtklib/ktools.zip" com.sun.kvem.preferences.Preferences

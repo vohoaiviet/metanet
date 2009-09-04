@@ -1,0 +1,280 @@
+# bundle settings
+MIDlet-Description=A MetaDon project.
+MIDlet-Name=MoLocBlogger
+MIDlet-Delete-Confirm=Delete MoLocBlogger?
+
+# framework specific settings
+polish.skipArgumentCheck=true
+# deactivate clear and delete commands
+polish.TextField.suppressCommands=true
+polish.TextField.useDirectInput=true
+polish.ChoiceGroup.suppressSelectCommand=true
+
+# screen titles
+title.main=MoLocBlog
+title.login=Login
+title.platform=Platform
+title.newBlog=Blog
+title.btDeviceList=Detected Devices
+title.preview=Photo
+title.message=Message
+title.browserLocal=Stored Blogs
+title.browserServer=Posted Blogs
+title.statistics=Statistics
+title.monitor=Monitor
+
+# alert screen titles
+title.alert.ok=Success
+title.alert.error=Error
+title.alert.info=Information
+title.alert.confirmation=Confirmation
+title.alert.activity=Information
+
+# main menu
+menu.main.platform=Platform
+menu.main.settings=Settings
+menu.main.newBlog=New Blog
+menu.main.storedBlogs=Stored Blogs
+menu.main.postedBlogs=Posted Blogs
+menu.main.statistics=Statistics
+menu.main.monitor=Monitor
+menu.main.quit=Exit
+
+# sub menu
+menu.platform.generic=Generic
+menu.platform.display=Display
+menu.platform.libraries=Java APIs
+menu.platform.bluetooth=Bluetooth
+menu.platform.fileConnection=File Connection
+
+# sub menu
+menu.newBlog.blogPM=Greeting Card
+menu.newBlog.blogM=Letter
+
+# name of form tabs
+settings.tab.security=Security
+settings.tab.content=Blogs
+settings.tab.location=Location
+settings.tab.connectivity=Connectivity
+
+# name of choice groups
+settings.label.login=Keep Credentials Secrete
+settings.label.secureChannel=SSL Connection
+settings.label.photo=Photo Size
+settings.label.relation=Blog Relation
+settings.label.order=Blog Order
+settings.label.distanceUnit=Distance Unit
+settings.label.waypoint=Blog as Waypoint
+settings.label.gpsDeviceType=Location Service
+settings.label.gpsDevice=GPS Device
+settings.label.network=Network
+
+# choice group entries
+settings.no=No
+settings.yes=Yes
+settings.photo.small=Small
+settings.photo.medium=Medium
+settings.photo.large=Large
+settings.relation.journey=Journey Blogs
+settings.relation.standalone=Standalone Blogs
+settings.order.time=Time
+settings.order.type=Type
+settings.distanceUnit.kilometers=Kilometers
+settings.distanceUnit.miles=Miles
+settings.waypoint.disabled=Disabled
+settings.waypoint.enabled=Enabled
+settings.gpsDeviceType.intern=Search
+settings.gpsDeviceType.extern=GPS Device
+settings.gpsDevice.search=Search
+settings.network.provider=Provider/WLAN
+settings.network.bluetooth=Bluetooth
+
+# name of record stores
+recordManager.store.PM=MultimediaBlogs
+recordManager.store.PMThumb=MultimediaBlogsThumb
+recordManager.store.M=MessageBlogs
+recordManager.store.trace=Trace
+recordManager.store.PMServerThumb=MultimediaBlogsServerThumb
+recordManager.store.MServer=MessageBlogsServer
+
+blogManager.alert.storageFailed=Storing Failed.\n
+
+photoManager.label.preview=Preview
+photoManager.label.photo.size=Photo Size
+photoManager.alert.captureFailed=Capture Failed.\n
+photoManager.alert.memoryProblem=Not Enough Memory.\nClose Applications.
+
+# photo characteristics
+photoManager.photo.encoding.small.width=320
+photoManager.photo.encoding.small.height=240
+photoManager.photo.encoding.large.width=480
+photoManager.photo.encoding.large.height=360
+photoManager.photo.encoding.captureFormat=jpg
+
+photoManager.photo.size.small=Small
+photoManager.photo.size.medium=Medium
+photoManager.photo.size.large=Large
+
+# blog content indicators for blog browser
+blogInfoFormatter.indicator.notAvailable=-
+blogInfoFormatter.indicator.message=M
+blogInfoFormatter.indicator.waypoint=W
+blogInfoFormatter.indicator.journey=JB
+
+# splash screen info
+appSplashScreen.loading.application=Initializing...
+appSplashScreen.loading.controllers=Loading controllers...
+appSplashScreen.loading.blogs=Loading blogs...
+appSplashScreen.loading.screens=Loading screens...
+
+appSplashScreen.credits=Copyright 2009\nby Hannes Weingartner
+
+# content of alert screens
+alert.notSupported=Not Supported on this Device.
+#blogManager.alert.serializing=Serializing Blog...
+blogManager.alert.storing=Storing Blog...
+
+locationManager.alert.connecting=Connecting
+locationManager.alert.waiting=Wait for location...
+locationManager.alert.unreachableDevice=Device not reachable.
+locationManager.alert.unreachableGPSService=No satellites in view.\nTry again?
+locationManager.alert.unreachableGenericService=No Service reachable.\nTry again?
+locationManager.alert.disconnecting=Disconnecting...
+genericLocationProvider.alert.unreachableProvider=No Provider reachable.
+
+gpsDevice.alert.connectionLost=Connection lost
+gpsDevice.alert.noData=Unable to get location
+
+bluetoothManager.alert.searching=Searching Devices...
+bluetoothManager.alert.serviceNotFound=Service not found.
+
+form.login.alert.accessDenied=Unauthorized.
+form.login.alert.incomplete=Input incomplete.
+
+geoNamesWS.resolvingJourney=Resolving Journey...
+traceManager.waypointsResolved=Waypoint(s) Resolved.
+traceManager.notResolved=Service Error.\nNo Waypoints resolved.
+
+tmblogServer.location=84.114.9.223
+tmblogServer.serviceNotAvailable=Service not Available.
+gatewayService.address=/axis2/services/Gateway
+
+gatewayServiceConnection.authenticate=Authentication...
+gatewayServiceConnection.logout=Logout...
+gatewayServiceConnection.accountAvailable=Login Success.
+gatewayServiceConnection.noAccountAvailable=Account Invalid\nfor this Device.
+gatewayServiceConnection.serviceError=Unauthorized/\nService Unavailable.
+
+gatewayServiceConnection.posting=Posting
+gatewayServiceConnection.updating=Updating...
+gatewayServiceConnection.posted=posted.
+gatewayServiceConnection.postFailed=Posting Failed.
+gatewayServiceConnection.notAllowed=Not Allowed.
+
+gatewayService.updateFailed=Update Failed.
+blogBrowserLocal.initPost=Initialize posting...
+
+blogBrowserScreen.alert.deleteJourney=Delete Journey?
+blogBrowserScreen.alert.postJourney=Post Journey?\nThis may take some Time.
+
+controller.alert.exit=Exit MoLocBlogger?
+
+# user commands
+cmd.ok=OK
+cmd.yes=Yes
+cmd.no=No
+
+cmd.open=Open
+cmd.editName=Name
+cmd.select=Select
+cmd.options=Options
+cmd.resolveJourney=Resolve Journey
+cmd.back=Back
+cmd.clear=Clear
+cmd.cancel=Cancel
+cmd.close=Close
+cmd.reset=Reset
+cmd.exit=Exit
+
+cmd.sort=Sort
+cmd.store=Store
+cmd.post.journey=Post Journey
+cmd.post=Post
+cmd.delete.journey=Delete Journey
+cmd.delete=Delete
+
+cmd.update=Update
+cmd.capture=Capture
+cmd.submit=Submit
+cmd.standalone=Standalone
+cmd.resume=Resume
+cmd.discard=Discard
+cmd.deviceID=Device ID
+
+# blog info tab names
+blog.tab.properties=Properties
+blog.tab.waypoint=Waypoint
+blog.tab.photo=Photo
+blog.tab.message=Message
+
+blog.info.label.date=Date
+blog.info.label.time=Time
+blog.info.label.blogSize=Blog Size
+blog.info.label.photoResolution=Resolution
+blog.info.label.photoEncoding=Encoding
+blog.info.label.longitude=Longitude
+blog.info.label.latitude=Latitude
+blog.info.label.elevation=Waypoint Elevation
+blog.info.label.place=Nearby Place
+blog.info.label.state=State/Province
+blog.info.label.country=Country
+blog.info.label.typeValue=Location Type
+blog.info.label.methodValue=Location Method
+blog.info.label.hybridValue=Hybrid Approach
+blog.info.label.satelliteCount=GPS Satellites Used
+blog.info.label.messageLength=Length
+blog.info.label.content=Content
+
+# blog type identification
+blog.ALL.id=-1
+blog.M.id=0
+blog.PM.id=1
+blog.PM.id.quality.post=10
+blog.PM.id.quality.browse=11
+blog.stored=12
+blog.posted=13
+
+locationInfo.notAvailable=n/a
+locationInfo.hybridInfo.hybrid.yes=$H:Yes
+locationInfo.hybridInfo.hybrid.no=$H:No
+locationInfo.methodInfo.aoa=$M:Angle of Arrival
+locationInfo.methodInfo.satellite=$M:Satellite
+locationInfo.methodInfo.cellID=$M:CellID
+locationInfo.methodInfo.shortRange=$M:Short-range system
+locationInfo.methodInfo.timeDiff=$M:Time Difference
+locationInfo.methodInfo.toa=$M:Time of Arrival
+locationInfo.typeInfo.networkBased=$T:Network-based
+locationInfo.typeInfo.terminalBased=$T:Terminal-based
+
+statistics.label.storedBlogsSummary=Total Stored Blogs
+statistics.label.storedBlogsJourney=Journey Overview
+statistics.label.blogs=Blogs
+statistics.label.currentSize=Current Size
+statistics.label.lastModification=Last Modification
+statistics.label.availableSize=Available Size
+statistics.label.waypoints=Waypoints
+statistics.label.journeyDistance=Distance
+statistics.label.journeyTime=Duration
+statistics.defaultValue.journeyName=My Journey
+
+monitor.label.postedBlogs=Posted Blogs
+monitor.label.transferedPayload=Payload
+monitor.label.lastReset=Last Reset
+monitor.label.multimediaBlogs=Multimedia Blogs
+monitor.label.messageBlogs=Message Blogs
+monitor.alert.reset=Reset Monitor?
+
+text.days=d
+text.hours=h
+text.min=m
+text.sec=s

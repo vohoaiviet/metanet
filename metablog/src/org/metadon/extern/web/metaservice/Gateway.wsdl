@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://rmi.java/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://io.java/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns2="http://webservice.tmblog.tuwien.ac.at" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://webservice.tmblog.tuwien.ac.at">
+    <wsdl:documentation>Gateway</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax21="http://rmi.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://rmi.java/xsd">
+            <xs:complexType name="RemoteException">
+                <xs:complexContent>
+                    <xs:extension base="ns1:IOException">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="cause" nillable="true" type="xs:anyType"/>
+                            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="detail" nillable="true" type="xs:anyType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22="http://io.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java/xsd">
+            <xs:complexType name="IOException">
+                <xs:complexContent>
+                    <xs:extension base="ns2:Exception">
+                        <xs:sequence/>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ns="http://webservice.tmblog.tuwien.ac.at" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice.tmblog.tuwien.ac.at">
+            <xs:element name="logout">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="logoutResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="Exception">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:anyType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="RemoteException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RemoteException" nillable="true" type="ns0:RemoteException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="post">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="timestamp" type="xs:long"/>
+                        <xs:element minOccurs="0" name="journeyName" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="longitude" type="xs:double"/>
+                        <xs:element minOccurs="0" name="latitude" type="xs:double"/>
+                        <xs:element minOccurs="0" name="elevation" type="xs:double"/>
+                        <xs:element minOccurs="0" name="encodedPhoto" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="postResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="signon">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="deviceID" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="signonResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="signonRequest">
+        <wsdl:part name="parameters" element="ns2:signon"/>
+    </wsdl:message>
+    <wsdl:message name="signonResponse">
+        <wsdl:part name="parameters" element="ns2:signonResponse"/>
+    </wsdl:message>
+    <wsdl:message name="logoutRequest">
+        <wsdl:part name="parameters" element="ns2:logout"/>
+    </wsdl:message>
+    <wsdl:message name="logoutResponse">
+        <wsdl:part name="parameters" element="ns2:logoutResponse"/>
+    </wsdl:message>
+    <wsdl:message name="postRequest">
+        <wsdl:part name="parameters" element="ns2:post"/>
+    </wsdl:message>
+    <wsdl:message name="postResponse">
+        <wsdl:part name="parameters" element="ns2:postResponse"/>
+    </wsdl:message>
+    <wsdl:message name="RemoteException">
+        <wsdl:part name="parameters" element="ns2:RemoteException"/>
+    </wsdl:message>
+    <wsdl:portType name="GatewayPortType">
+        <wsdl:operation name="signon">
+            <wsdl:input message="ns2:signonRequest" wsaw:Action="urn:signon"/>
+            <wsdl:output message="ns2:signonResponse" wsaw:Action="urn:signonResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="logout">
+            <wsdl:input message="ns2:logoutRequest" wsaw:Action="urn:logout"/>
+            <wsdl:output message="ns2:logoutResponse" wsaw:Action="urn:logoutResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="post">
+            <wsdl:input message="ns2:postRequest" wsaw:Action="urn:post"/>
+            <wsdl:output message="ns2:postResponse" wsaw:Action="urn:postResponse"/>
+            <wsdl:fault message="ns2:RemoteException" name="RemoteException" wsaw:Action="urn:postRemoteException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="GatewaySOAP11Binding" type="ns2:GatewayPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="signon">
+            <soap:operation soapAction="urn:signon" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="logout">
+            <soap:operation soapAction="urn:logout" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="post">
+            <soap:operation soapAction="urn:post" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RemoteException">
+                <soap:fault use="literal" name="RemoteException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="GatewaySOAP12Binding" type="ns2:GatewayPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="signon">
+            <soap12:operation soapAction="urn:signon" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="logout">
+            <soap12:operation soapAction="urn:logout" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="post">
+            <soap12:operation soapAction="urn:post" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RemoteException">
+                <soap12:fault use="literal" name="RemoteException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="GatewayHttpBinding" type="ns2:GatewayPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="signon">
+            <http:operation location="Gateway/signon"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="signon"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="signon"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="logout">
+            <http:operation location="Gateway/logout"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="logout"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="logout"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="post">
+            <http:operation location="Gateway/post"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="post"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="post"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Gateway">
+        <wsdl:port name="GatewaySOAP11port_http" binding="ns2:GatewaySOAP11Binding">
+            <soap:address location="http://192.168.1.35:80/axis2/services/Gateway"/>
+        </wsdl:port>
+        <wsdl:port name="GatewaySOAP12port_http" binding="ns2:GatewaySOAP12Binding">
+            <soap12:address location="http://192.168.1.35:80/axis2/services/Gateway"/>
+        </wsdl:port>
+        <wsdl:port name="GatewayHttpport" binding="ns2:GatewayHttpBinding">
+            <http:address location="http://192.168.1.35:80/axis2/services/Gateway"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

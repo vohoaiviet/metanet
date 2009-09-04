@@ -1,0 +1,2 @@
+REM Start the editor for binary data files:
+java -classpath "C:\Programme\J2ME-Polish 2.0.4\lib\enough-j2mepolish-build.jar;C:\Programme\J2ME-Polish 2.0.4\lib\jdom.jar;%CLASSPATH%" de.enough.polish.font.FontCreator %1 %2 %3
