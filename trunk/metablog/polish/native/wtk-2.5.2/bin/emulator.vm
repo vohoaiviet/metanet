@@ -1,0 +1,1 @@
+C:\PROGRA~1\Java\JDK15~1.0_1\bin\java -Dkvem.home="%KVEM_HOME%" -Djava.library.path="%KVEM_HOME%/bin" -Dsun.java2d.ddlock=true -Dsun.java2d.gdiblit=false -cp "%KVEM_HOME%/wtklib/kenv.zip";"%KVEM_HOME%/wtklib/ktools.zip";"%KVEM_HOME%/wtklib/customjmf.jar" com.sun.kvem.environment.EmulatorWrapper

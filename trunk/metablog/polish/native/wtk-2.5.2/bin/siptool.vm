@@ -1,0 +1,1 @@
+C:\PROGRA~1\Java\JDK15~1.0_1\bin\java -Dkvem.home="%KVEM_HOME%" -cp "%KVEM_HOME%/wtklib/kvem.jar";"%KVEM_HOME%/wtklib/kenv.zip";"%KVEM_HOME%/wtklib/ktools.zip";"%KVEM_HOME%/wtklib/nist-sip-1.2.jar";"%KVEM_HOME%/wtklib/JainSipApi1.1.jar";"%KVEM_HOME%/wtklib/jain-sip-presence-proxy.jar" com.sun.kvem.sip.ui.SIPServer -start

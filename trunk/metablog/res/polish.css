@@ -1,0 +1,387 @@
+/* ********************* PREDEFINED STYLE ********************* */
+
+
+/* application colors */
+colors {
+	bgColor:  rgb(102,102,102);
+    brightBgColor:  rgb(204,204,204);
+    
+	fontColor: rgb(0,0,0);
+	brightFontColor: rgb(255,255,255);
+
+	caretColor: rgb(153,102,51);
+	okColor: #CCFFCC;
+	errorColor: #FFCCCC;
+	errorColorFatal: #FF0000;
+	infoColor: #9999FF;
+	confirmColor: #FFFFFF;
+}
+
+/* screen title */
+title {
+	padding: 3;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	font {
+		color: brightFontColor;
+		size: large;
+		style: bold;
+	}
+	background-color: bgColor;
+	border: none;
+	layout: horizontal-center | horizontal-expand;
+	text-shadow-color: brightBgColor;
+}
+  
+/* menu bar - options, select, or cancel */
+menu {
+	margin: 2;
+    margin-bottom: 3;
+	background-color: bgColor;
+	border-color: caretColor;
+	font-style: bold;
+	font-color: brightFontColor;
+	menubar-color: bgColor;
+	view-type: slide-up;
+}
+
+/** The extended menu bar */
+menubar
+{
+	margin: 0;
+	padding: 2;
+	padding-top: 3;
+	background {
+		type: vertical-gradient;
+		top-color: bgColor;
+		bottom-color: #fff;
+		start: 10%;
+		end: 90%;
+	}
+}
+
+
+leftcommand
+{
+	margin: 0;
+	padding-top: 3;
+	padding-bottom: 0;
+	font-color: fontColor;
+	font-style: bold;
+}
+
+rightcommand extends leftcommand
+{
+	layout: right;
+}
+
+
+/* screen menu  - used by lists, forms, choice-groups and so on */
+menuItem {
+	padding: 5;
+	margin: 5;
+	background {
+		color: bgColor;
+		border-color: fontColor;
+		border-width: 2;
+	}
+	font {
+		color: fontColor;
+		size: medium;
+		style: bold;
+	}
+	layout: expand | left;
+}
+
+/* focused item */
+focused extends menuItem {  
+	background {
+		color: brightBgColor;
+		border-color: caretColor;
+	}
+}
+
+label {
+   font {
+        color: fontColor;
+        size: medium;
+        style: plain;
+    } 
+}
+
+
+/* system specific screen information */
+info extends label {
+        
+}
+
+/* TODO: better height adaption */
+alert {
+	margin-left: 2;
+	margin-right: 2;
+	margin-top: 60;
+	margin-bottom: 60;
+	background {
+		arc: 15;
+		color: brightBgColor;
+		border-color: caretColor;
+	}
+}
+
+alertcontent extends label {
+        margin-top: 8;
+        margin-left: 8;
+        padding-horizontal: 14;
+        font-style: bold;
+        font-color: bgColor;
+        icon-image: url( alert_note.png );
+        icon-image-align: left;
+}
+
+info {
+	padding-right: 10;
+	background: none;
+	font-style: plain; 
+	font-face: proportional; 
+	font-size: small; 
+	font-color: brightBgColor;
+	layout: right;
+}
+
+
+
+tabbar {
+        background-color: bgColor;
+        layout: expand;
+        padding-top: 4;
+        tabbar-scrolling-indicator-color: bgColor;
+}
+
+scrollbar {
+	scrollbar-slider-color: bgColor;
+	scrollbar-slider-width: 6;
+	scrollbar-fadeout: true;
+	opacity: 180;
+	background-color: brightBgColor;
+}
+
+activetab extends label {
+        padding-top: 5;
+        padding-left: 21;
+        padding-right: 21;
+        background-type: round-tab;
+        background-color: white;
+        background-arc: 0;
+        font-color: bgColor;
+        font-style: bold;
+}
+
+inactivetab extends activetab {
+        background-color: bgColor;
+        font-color: brightBgColor;
+}
+
+gauge {
+    padding-top: 28;
+    gauge-color: caretColor;
+    gauge-width: 200;
+    gauge-height: 8;
+    gauge-mode: chunked;
+    gauge-chunk-width: 5;
+    gauge-gap-color: brightBgColor;
+    gauge-gap-width: 5;
+    gauge-show-value: no;
+    layout: center;
+}
+
+/* ********************* STATIC STYLE ********************* */
+
+
+.textField extends menuItem {
+	layout: left;
+	textfield-caret-color: caretColor;
+	textfield-caret-char: |;
+	focused-style: .focusedInput;
+}
+
+.focusedInput extends .textField {
+	background {
+				arc: 15;
+                color: brightBgColor;
+                border-color: caretColor;
+                border-width: 2;
+        }
+}
+
+/* ********************* Lists ********************* */
+
+.mainScreenItem extends menuItem {
+	icon-image: url( main%INDEX%.png );
+	icon-image-align: left;
+}
+
+.systemScreenItem extends menuItem {
+	icon-image: url( main0.png );
+	icon-image-align: left;
+}
+
+.photoBlogScreenItem extends menuItem {
+        icon-image: url( blog_pm.png );
+	icon-image-align: left;
+}
+
+.textBlogScreenItem extends menuItem {
+        icon-image: url( blog_m.png );
+	icon-image-align: left;
+}
+
+.btDeviceListItem extends menuItem {
+	icon-image: url( bluetooth.png );
+	icon-image-align: left;
+}
+
+/* ********************* Login Form ********************* */
+
+.loginScreen {
+	padding-top: 30;
+	columns: 3;
+	columns-width: 35, 165, 40;
+}
+
+.icon {
+	padding: 6;
+	margin: 6;
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 3;
+	padding-left: 3;
+	layout: center;
+}
+
+.loginTextField extends .textField {
+    textfield-show-length: true;
+	textfield-width: 165;
+}
+
+/* ********************* Alert Screen ********************* */
+
+.alertOKScreen extends alert {
+        background-color: okColor;
+}
+.alertErrorScreen extends alert {
+	background-color: errorColor;
+}
+
+.alertInfoScreen extends alert {
+}
+
+.alertConfirmScreen extends alert {
+}
+
+.alertActivityScreen extends alert {
+}
+
+/* ********************* Info Form ********************* */
+
+.infoLabel extends label {
+}
+
+.infoValue extends .infoLabel{
+	font-style: bold;
+        margin-bottom: 10;
+}
+
+.photoPreview extends .photoViewerPhotoItem {
+        margin-bottom: 10;
+}
+
+/* ********************* Settings Form ********************* */
+
+.exclusiveChoiceGroup extends menuItem {
+    /*view-type: exclusive;
+    exclusiveview-arrow-color: bgColor;*/
+}
+
+.choiceGroupEntry extends menuItem {
+}
+
+/* ********************* Photo Viewer Form ********************* */
+
+.photoViewerScreen {
+}
+
+.photoViewerTitleItem extends label {
+        margin-bottom: 10;
+}
+
+.photoViewerInfoItem extends label {
+        margin-top: 10;
+}
+
+.photoViewerPhotoItem {
+        border-color: caretColor;
+        border-width: 2;
+}
+
+/* ********************* Message Form ********************* */
+
+.messageScreen {
+    padding-top: 20;
+    textfield-show-length: true;
+
+}
+
+/* ********************* Blog Browser ********************* */
+
+.blogBrowserItem extends menuItem {
+    font-style: plain;
+    layout: expand | right;
+    focused-style: .focusedBlog;
+}
+
+/* focused blog */
+.focusedBlog extends .blogBrowserItem {  
+        font-style: bold;
+	background {
+		arc: 15;
+		color: brightBgColor;
+		border-color: caretColor;
+		border-width: 1;
+	}
+}
+
+.blogBrowserMessage extends label {
+    padding: 10;
+}
+
+/* ********************* Statistics ********************* */
+
+.statisticsBody extends label {
+    margin-bottom: 5;
+}
+
+.statisticsHeader extends .statisticsBody {
+    margin-top: 10;
+    margin-bottom: 5;
+    font-style: bold;
+}
+
+.journeyNameTextField extends .textField {
+    textfield-show-length: true;
+    textfield-width: 130;
+}
+
+
+/* ********************* DYNAMIC STYLE ********************* */
+
+
+
+
+
+
+
+
+
+
