@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="contactFwd" NAME="forward0" PATH="/contactFwd.do"
+  SHAPE="32,17,0,0" TARGET="action6" TITLE="contactFwd" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="loginFwd" NAME="forward1" PATH="/loginFwd.do"
+  SHAPE="32,129,0,0" TARGET="action2" TITLE="loginFwd" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="init" NAME="forward2" PATH="/init.do"
+  SHAPE="32,241,0,0" TARGET="action5" TITLE="init" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="registerFwd" NAME="forward3" PATH="/registerFwd.do"
+  SHAPE="32,353,0,0" TARGET="action1" TITLE="registerFwd" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="logoutFwd" NAME="forward4" PATH="/logoutFwd.do"
+  SHAPE="32,465,0,0" TARGET="action0" TITLE="logoutFwd" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="mainFwd" NAME="forward5" PATH="/mainFwd.do"
+  SHAPE="32,577,0,0" TARGET="action7" TITLE="mainFwd" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="aboutFwd" NAME="forward6" PATH="/aboutFwd.do"
+  SHAPE="32,689,0,0" TARGET="action8" TITLE="aboutFwd" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#logoutFwd" NAME="action0" PATH="/logoutFwd"
+  SHAPE="240,481,0,0" SUBTYPE="parameter" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action0" PATH="/jsp/logout.jsp"
+   TARGET="page0" TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#registerFwd" NAME="action1" PATH="/registerFwd"
+  SHAPE="240,369,0,0" SUBTYPE="parameter" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action1" PATH="/jsp/register.jsp"
+   TARGET="page1" TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#loginFwd" NAME="action2" PATH="/loginFwd"
+  SHAPE="240,145,0,0" SUBTYPE="parameter" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action2" PATH="/jsp/login.jsp"
+   TARGET="page2" TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#register" NAME="action3" PATH="/register"
+  SHAPE="32,801,0,0" TITLE="StrutsActionRegisterForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#login" NAME="action4" PATH="/login"
+  SHAPE="240,817,0,0" TITLE="StrutsActionLoginForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#init" NAME="action5" PATH="/init"
+  SHAPE="240,257,0,0" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#contactFwd" NAME="action6" PATH="/contactFwd"
+  SHAPE="240,33,0,0" SUBTYPE="parameter" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action6" PATH="/jsp/contact.jsp"
+   TARGET="page3" TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#mainFwd" NAME="action7" PATH="/mainFwd"
+  SHAPE="240,593,0,0" SUBTYPE="parameter" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action7" PATH="/jsp/main.jsp"
+   TARGET="page4" TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#aboutFwd" NAME="action8" PATH="/aboutFwd"
+  SHAPE="240,705,0,0" SUBTYPE="parameter" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action8" PATH="/jsp/about.jsp"
+   TARGET="page5" TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/jsp/logout.jsp" SHAPE="448,466,0,0"
+  SUBTYPE="jsp" TITLE="logout.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1" PATH="/jsp/register.jsp" SHAPE="448,354,0,0"
+  SUBTYPE="jsp" TITLE="register.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page2" PATH="/jsp/login.jsp" SHAPE="448,130,0,0"
+  SUBTYPE="jsp" TITLE="login.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page3" PATH="/jsp/contact.jsp" SHAPE="448,18,0,0"
+  SUBTYPE="jsp" TITLE="contact.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page4" PATH="/jsp/main.jsp" SHAPE="448,578,0,0"
+  SUBTYPE="jsp" TITLE="main.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5" PATH="/jsp/about.jsp" SHAPE="448,690,0,0"
+  SUBTYPE="jsp" TITLE="about.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>
