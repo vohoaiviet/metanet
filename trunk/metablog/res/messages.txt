@@ -1,7 +1,7 @@
 # bundle settings
-MIDlet-Description=A MetaDon project.
-MIDlet-Name=MoLocBlogger
-MIDlet-Delete-Confirm=Delete MoLocBlogger?
+MIDlet-Description=A Meta-D.O.N. project.
+MIDlet-Name=MetaBlog
+MIDlet-Delete-Confirm=Delete MetaBlog?
 
 # framework specific settings
 polish.skipArgumentCheck=true
@@ -11,7 +11,7 @@ polish.TextField.useDirectInput=true
 polish.ChoiceGroup.suppressSelectCommand=true
 
 # screen titles
-title.main=MoLocBlog
+title.main=MetaBlog
 title.login=Login
 title.platform=Platform
 title.newBlog=Blog
@@ -127,7 +127,7 @@ appSplashScreen.loading.controllers=Loading controllers...
 appSplashScreen.loading.blogs=Loading blogs...
 appSplashScreen.loading.screens=Loading screens...
 
-appSplashScreen.credits=Copyright 2009\nby Hannes Weingartner
+appSplashScreen.credits=Copyright 2009\nby Meta-D.O.N
 
 # content of alert screens
 alert.notSupported=Not Supported on this Device.
@@ -177,7 +177,7 @@ blogBrowserLocal.initPost=Initialize posting...
 blogBrowserScreen.alert.deleteJourney=Delete Journey?
 blogBrowserScreen.alert.postJourney=Post Journey?\nThis may take some Time.
 
-controller.alert.exit=Exit MoLocBlogger?
+controller.alert.exit=Exit MetaBlog?
 
 # user commands
 cmd.ok=OK

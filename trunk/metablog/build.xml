@@ -34,8 +34,8 @@
 	<property name="series40.home" value="C:/Programme/S60/Devices" />
 	<property name="nokia.home" value="C:/Programme/S60/devices/" />
 	
-	<property name="company.name" value="MetaDon" />
-	<property name="company.url" value="www.metadon.org" />
+	<property name="company.name" value="Meta-D.O.N" />
+	<property name="company.url" value="www.meta-don.org" />
 
 	<!-- BUILD TARGETS -->
 	<target name="init" depends="clean">
@@ -64,7 +64,7 @@
 	<target name="j2mepolish" depends="init" description="This is the controller for the J2ME build process.">
 		<j2mepolish>
 			<!-- general settings (basic JAD-attributes) -->
-			<info copyright="Copyright 2009 MetaDon. All rights reserved."
+			<info copyright="Copyright 2009 Meta-D.O.N. All rights reserved."
 				description="${config.client.name} for your mobile"
 				icon="${config.client.icon}"
 				infoUrl="${company.url}"
