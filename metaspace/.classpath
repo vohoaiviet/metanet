@@ -6,16 +6,16 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/gluegen-rt.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/d/Documents/workspace_java/jogl-1.1.1-docs/"/>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SemaSpace/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="lib/jogl.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="file:/Users/d/Documents/workspace_java/jogl-1.1.1-docs/"/>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="SemaSpace/lib"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="metaspace/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/gluegen-rt.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/d/Documents/workspace_java/jogl-1.1.1-docs/"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="metaspace/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/batik-1.7/lib/batik-svggen.jar"/>
