@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name="StrutsActionLoginForm"
+                   type="org.metadon.view.StrutsActionLoginForm">
+            <form-property name="username" type="java.lang.String" />
+            <form-property name="password" type="java.lang.String" />
+        </form-bean>    
+        <form-bean name="StrutsActionRegisterForm"
+                   type="org.metadon.view.StrutsActionRegisterForm">
+            <form-property name="username" type="java.lang.String" initial=""/>
+            <form-property name="password" type="java.lang.String" initial=""/>
+            <form-property name="passwordConfirm" type="java.lang.String" initial=""/>
+            <form-property name="deviceID" type="java.lang.String" initial=""/>
+        </form-bean>
+    </form-beans>
+    
+    <global-forwards>
+        <forward name="init" path="/init.do"/>
+        <forward name="loginFwd" path="/loginFwd.do"/>
+        <forward name="registerFwd" path="/registerFwd.do"/>
+        <forward name="mainFwd" path="/mainFwd.do"/>
+        <forward name="aboutFwd" path="/aboutFwd.do"/>
+        <forward name="contactFwd" path="/contactFwd.do"/>
+        <forward name="logoutFwd" path="/logoutFwd.do"/>
+    </global-forwards>
+    
+    <action-mappings>
+        <action path="/init"
+                type="org.metadon.control.StrutsActionInit">
+        </action>
+        <action input="/jsp/login.jsp" 
+                name="StrutsActionLoginForm"
+                attribute="StrutsActionLoginForm"
+                path="/login"
+                scope="session"
+                validate="true"
+                type="org.metadon.control.StrutsActionLogin">
+        </action>
+        <action input="/jsp/register.jsp"
+                name="StrutsActionRegisterForm"
+                attribute="StrutsActionRegisterForm"
+                path="/register"
+                scope="session"
+                validate="true"
+                type="org.metadon.control.StrutsActionRegister">
+        </action>
+        <action path="/loginFwd"
+                type="org.apache.struts.actions.ForwardAction"
+                parameter="/jsp/login.jsp">
+        </action>
+        <action path="/registerFwd"
+                type="org.apache.struts.actions.ForwardAction"
+                parameter="/jsp/register.jsp">
+        </action>
+        <action path="/mainFwd"
+                type="org.apache.struts.actions.ForwardAction"
+                parameter="/jsp/main.jsp">
+        </action>
+        <action path="/aboutFwd"
+                type="org.apache.struts.actions.ForwardAction"
+                parameter="/jsp/about.jsp">
+        </action>
+        <action path="/contactFwd"
+                type="org.apache.struts.actions.ForwardAction"
+                parameter="/jsp/contact.jsp">
+        </action>
+        <action path="/logoutFwd"
+                type="org.apache.struts.actions.ForwardAction"
+                parameter="/jsp/logout.jsp">
+        </action>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+    
+    <message-resources parameter="res/application"/>  
+    
+    <!-- ========================= tiles plugin =============================== -->
+    
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+    
+</struts-config>
