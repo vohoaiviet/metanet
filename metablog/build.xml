@@ -8,7 +8,7 @@
 	<property name="dir.dist" value="dist" />
 	<property name="dir.source" value="src" />
 	
-	<property name="config.emulate" value="true" />
+	<property name="config.emulate" value="false" />
 	<property name="config.polishgui" value="true" />
 	<property name="config.optimized" value="true" />
 	<property name="config.device" value="Nokia/E51" />
