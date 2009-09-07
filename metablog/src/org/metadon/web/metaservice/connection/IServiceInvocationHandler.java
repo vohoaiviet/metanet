@@ -3,9 +3,9 @@
  * and open the template in the editor.
  */
 
-package org.metadon.utils;
+package org.metadon.web.metaservice.connection;
 
-public interface IServiceListener {
+public interface IServiceInvocationHandler {
 
 	public void onAuthenticationRequestComplete(String result);
 	public void onAuthenticationRequestError(String code);

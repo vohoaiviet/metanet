@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package org.metadon.extern.location;
+package org.metadon.location;
 
 
 import java.io.IOException;
@@ -18,8 +18,8 @@ import javax.microedition.io.StreamConnection;
 import de.enough.polish.util.Locale;
 import javax.microedition.lcdui.Displayable;
 
+import org.metadon.bluetooth.BluetoothDevice;
 import org.metadon.control.Controller;
-import org.metadon.extern.bluetooth.BluetoothDevice;
 
 import java.util.TimerTask;
 import java.util.Timer;

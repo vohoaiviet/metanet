@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.metadon.extern.web.geoservice;
+package org.metadon.web.geoservice;
 
 
 import javax.microedition.io.HttpConnection;
@@ -18,7 +18,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.metadon.control.Controller;
-import org.metadon.extern.location.Waypoint;
+import org.metadon.location.Waypoint;
 import org.metadon.utils.ActivityAlert;
 import org.xml.sax.SAXException;
 

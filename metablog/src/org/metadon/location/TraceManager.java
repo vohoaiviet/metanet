@@ -6,7 +6,7 @@
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
-package org.metadon.extern.location;
+package org.metadon.location;
 
 import java.util.Vector;
 import java.util.Enumeration;
@@ -23,10 +23,10 @@ import org.metadon.beans.Settings;
 import org.metadon.control.BlogBrowserLocal;
 import org.metadon.control.Controller;
 import org.metadon.control.RecordManager;
-import org.metadon.extern.web.geoservice.GeonamesWSC;
-import org.metadon.extern.web.geoservice.Toponym;
 import org.metadon.utils.DateFormatter;
 import org.metadon.utils.RMSWaypointSelector;
+import org.metadon.web.geoservice.GeonamesWSC;
+import org.metadon.web.geoservice.Toponym;
 
 import de.enough.polish.util.Locale;
 

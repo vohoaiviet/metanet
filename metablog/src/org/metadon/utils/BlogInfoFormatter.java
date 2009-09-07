@@ -22,10 +22,10 @@ import org.metadon.beans.Settings;
 import org.metadon.control.BlogManager;
 import org.metadon.control.Controller;
 import org.metadon.control.RecordManager;
-import org.metadon.extern.location.GPSLocation;
-import org.metadon.extern.location.TraceManager;
-import org.metadon.extern.location.Waypoint;
-import org.metadon.extern.location.WaypointToolkit;
+import org.metadon.location.GPSLocation;
+import org.metadon.location.TraceManager;
+import org.metadon.location.Waypoint;
+import org.metadon.location.WaypointToolkit;
 
 import java.util.Vector;
 

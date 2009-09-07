@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.metadon.extern.web.metaservice;
+package org.metadon.web.metaservice.connection;
 
 import javax.xml.rpc.Stub;
 
@@ -10,7 +10,6 @@ import org.metadon.beans.Payload;
 import org.metadon.control.Controller;
 import org.metadon.utils.ActivityAlert;
 import org.metadon.utils.Base64Encoder;
-import org.metadon.utils.IServiceListener;
 
 import de.enough.polish.rmi.RemoteException;
 import de.enough.polish.util.Locale;
@@ -25,11 +24,11 @@ import de.enough.polish.util.Locale;
  * The call is done in a separate thread and the results
  * are delivered asynchronously via WServiceListener
  */
-public class GatewayServiceConnection implements Runnable {
+public class ServiceConnectionKSoap implements Runnable {
 
     Controller controller;
     private boolean isThreadRunning = false;
-    private IServiceListener listener;
+    private IServiceInvocationHandler listener;
     private String endPoint;
     private String comment;
     private String deviceID;
@@ -48,7 +47,7 @@ public class GatewayServiceConnection implements Runnable {
     public static final int OPERATION_POST = 2;
     private static ActivityAlert activityScreen = new ActivityAlert(true);
 
-    public GatewayServiceConnection(IServiceListener listener, String endPoint) {
+    public ServiceConnectionKSoap(IServiceInvocationHandler listener, String endPoint) {
         if (listener == null || endPoint == null) {
             throw new IllegalArgumentException("Listener cannot be null");
         }

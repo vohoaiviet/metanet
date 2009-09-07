@@ -8,7 +8,7 @@
  */
 package org.metadon.beans;
 
-import org.metadon.extern.location.GPSLocation;
+import org.metadon.location.GPSLocation;
 
 /**
  *

@@ -6,7 +6,7 @@
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
-package org.metadon.extern.location;
+package org.metadon.location;
 
 import java.util.Vector;
 import de.enough.polish.util.Locale;

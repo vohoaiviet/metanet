@@ -15,7 +15,7 @@ import org.metadon.beans.BlogMessage;
 import org.metadon.beans.BlogMultimedia;
 import org.metadon.beans.Message;
 import org.metadon.beans.Photo;
-import org.metadon.extern.location.GPSLocation;
+import org.metadon.location.GPSLocation;
 
 import java.util.Stack;
 

@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package org.metadon.extern.web.geoservice;
+package org.metadon.web.geoservice;
 
 import java.util.Stack;
 
