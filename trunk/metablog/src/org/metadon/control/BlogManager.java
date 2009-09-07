@@ -14,7 +14,7 @@ import org.metadon.beans.Blog;
 import org.metadon.beans.BlogMessage;
 import org.metadon.beans.BlogMultimedia;
 import org.metadon.beans.Message;
-import org.metadon.beans.Payload;
+import org.metadon.beans.Indicator;
 import org.metadon.beans.Photo;
 import org.metadon.beans.Settings;
 import org.metadon.location.GPSLocation;
@@ -369,7 +369,7 @@ public class BlogManager {
         BlogMultimedia blogPM;
         BlogMessage blogM;
         byte[] photoData = null;
-        Payload payload = null;
+        Indicator payload = null;
 
         if (b instanceof BlogMultimedia) {
             blogPM = (BlogMultimedia) this.blogPost;
@@ -385,7 +385,7 @@ public class BlogManager {
             // set payload for data transfer
             if (blogPM != null && photoData != null) {
                 // timestamp
-                payload = new Payload(blogPM.getTimestamp());
+                payload = new Indicator(blogPM.getTimestamp());
                 // photo
                 payload.setPhoto(photoData);
                 // message
@@ -414,7 +414,7 @@ public class BlogManager {
             // set payload for data transfer
             if (blogM != null) {
                 // timestamp
-                payload = new Payload(blogM.getTimestamp());
+                payload = new Indicator(blogM.getTimestamp());
                 // message
                 payload.setMessage(blogM.getMessage().getText());
                 // location
