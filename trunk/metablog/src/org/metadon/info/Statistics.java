@@ -21,7 +21,7 @@ import org.metadon.beans.Settings;
 import org.metadon.control.BlogManager;
 import org.metadon.control.Controller;
 import org.metadon.control.RecordManager;
-import org.metadon.extern.location.TraceManager;
+import org.metadon.location.TraceManager;
 import org.metadon.utils.DateFormatter;
 
 import java.util.Vector;

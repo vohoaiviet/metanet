@@ -12,7 +12,7 @@ import javax.microedition.rms.*;
 
 import org.metadon.beans.Credentials;
 import org.metadon.beans.Settings;
-import org.metadon.extern.location.Waypoint;
+import org.metadon.location.Waypoint;
 import org.metadon.utils.RMSBlogSelector;
 import org.metadon.utils.RMSWaypointSelector;
 

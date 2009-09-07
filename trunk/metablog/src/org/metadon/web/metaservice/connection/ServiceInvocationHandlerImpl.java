@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.metadon.extern.web.metaservice;
+package org.metadon.web.metaservice.connection;
 
 
 import javax.microedition.lcdui.Displayable;
@@ -11,7 +11,6 @@ import org.metadon.beans.Payload;
 import org.metadon.beans.Settings;
 import org.metadon.control.BlogBrowserLocal;
 import org.metadon.control.Controller;
-import org.metadon.utils.IServiceListener;
 
 import de.enough.polish.util.Locale;
 
@@ -19,7 +18,7 @@ import de.enough.polish.util.Locale;
  *
  * @author Hannes
  */
-public class GatewayWSC implements IServiceListener {
+public class ServiceInvocationHandlerImpl implements IServiceInvocationHandler {
 
     private Controller controller;
     private static final String TRANSFER_BASIC = "http://";
@@ -27,7 +26,7 @@ public class GatewayWSC implements IServiceListener {
     private static final int PORT_BASIC = 80;
     private static final int PORT_SECURE = 443;
 
-    public GatewayWSC(Controller c) {
+    public ServiceInvocationHandlerImpl(Controller c) {
         this.controller = c;
     }
 
@@ -71,9 +70,9 @@ public class GatewayWSC implements IServiceListener {
     public void onAuthenticationRequestComplete(String info) {
         //#debug
 //#         System.out.println("request ok: " + info);
-        if (GatewayServiceConnection.OPERATION == GatewayServiceConnection.OPERATION_LOGON) {
+        if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGON) {
             this.controller.setLoggedIn(true);
-        } else if (GatewayServiceConnection.OPERATION == GatewayServiceConnection.OPERATION_LOGOUT) {
+        } else if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGOUT) {
             this.controller.exit();
         }
     }
@@ -84,11 +83,11 @@ public class GatewayWSC implements IServiceListener {
     public void onAuthenticationRequestError(String error) {
         //#debug
 //#         System.out.println("request failed: " + error);
-        if (GatewayServiceConnection.OPERATION == GatewayServiceConnection.OPERATION_LOGON) {
+        if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGON) {
             Displayable nextScreen = this.controller.getScreen(this.controller.LOGIN_SCR);
             this.controller.show(this.controller.ERROR_ASCR, error, null, nextScreen);
             this.controller.setLoggedIn(false);
-        } else if (GatewayServiceConnection.OPERATION == GatewayServiceConnection.OPERATION_LOGOUT) {
+        } else if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGOUT) {
             this.controller.exit();
         }
     }
@@ -119,8 +118,8 @@ public class GatewayWSC implements IServiceListener {
         this.controller.setPosted(false);
     }
 
-    private GatewayServiceConnection getServiceConnection() throws IllegalArgumentException {
-        GatewayServiceConnection serviceConnection = null;
+    private ServiceConnectionKSoap getServiceConnection() throws IllegalArgumentException {
+        ServiceConnectionKSoap serviceConnection = null;
         String endpoint = null;
         Settings settings = this.controller.getSettings();
 
@@ -136,7 +135,7 @@ public class GatewayWSC implements IServiceListener {
                     Locale.get("gatewayService.address");
         }
         if (endpoint != null) {
-            serviceConnection = new GatewayServiceConnection(this, endpoint);
+            serviceConnection = new ServiceConnectionKSoap(this, endpoint);
             serviceConnection.setController(this.controller);
             //#debug
 //#             System.out.println("endpoint: " + endpoint);

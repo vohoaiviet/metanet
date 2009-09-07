@@ -19,15 +19,14 @@ import javax.microedition.lcdui.AlertType;
 import org.metadon.beans.Credentials;
 import org.metadon.beans.Payload;
 import org.metadon.beans.Settings;
-import org.metadon.extern.bluetooth.BluetoothDevice;
-import org.metadon.extern.bluetooth.BluetoothManager;
-import org.metadon.extern.location.GPSLocation;
-import org.metadon.extern.location.LocationManager;
-import org.metadon.extern.location.TraceManager;
-import org.metadon.extern.web.metaservice.GatewayWSC;
+import org.metadon.bluetooth.BluetoothDevice;
+import org.metadon.bluetooth.BluetoothManager;
 import org.metadon.info.InfoCollector;
 import org.metadon.info.Monitor;
 import org.metadon.info.Statistics;
+import org.metadon.location.GPSLocation;
+import org.metadon.location.LocationManager;
+import org.metadon.location.TraceManager;
 import org.metadon.view.AppMainScreen;
 import org.metadon.view.AppSettingsScreen;
 import org.metadon.view.AppSplashScreen;
@@ -35,6 +34,7 @@ import org.metadon.view.BlogMainScreen;
 import org.metadon.view.LoginForm;
 import org.metadon.view.PlatformInfoScreen;
 import org.metadon.view.PlatformMainScreen;
+import org.metadon.web.metaservice.connection.ServiceInvocationHandlerImpl;
 
 import java.io.IOException;
 
@@ -60,7 +60,7 @@ public class Controller extends MIDlet implements CommandListener {
     private PlatformInfoScreen infoScreen;
     private AppSettingsScreen settingsScreen;
     private BlogMainScreen blogScreen;
-    private GatewayWSC gatewayService;
+    private ServiceInvocationHandlerImpl gatewayService;
     private static Display display;
     private Displayable next;
     private BluetoothManager bluetoothManager;
@@ -196,7 +196,7 @@ public class Controller extends MIDlet implements CommandListener {
             // this web service is used as a gateway to the tmblog server for
             // * user authentication
             // * posting
-            this.gatewayService = new GatewayWSC(this);
+            this.gatewayService = new ServiceInvocationHandlerImpl(this);
             this.setBackgroundLight(true);
         }
     }

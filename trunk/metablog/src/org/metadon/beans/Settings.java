@@ -15,7 +15,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
-import org.metadon.extern.bluetooth.BluetoothDevice;
+import org.metadon.bluetooth.BluetoothDevice;
 import org.metadon.utils.ISerializable;
 
 import de.enough.polish.util.Locale;

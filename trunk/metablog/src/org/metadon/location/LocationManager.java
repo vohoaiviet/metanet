@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package org.metadon.extern.location;
+package org.metadon.location;
 
 
 import de.enough.polish.util.Locale;
@@ -18,8 +18,8 @@ import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Alert;
 
 import org.metadon.beans.Settings;
+import org.metadon.bluetooth.*;
 import org.metadon.control.Controller;
-import org.metadon.extern.bluetooth.*;
 import org.metadon.utils.ActivityAlert;
 
 import java.io.IOException;

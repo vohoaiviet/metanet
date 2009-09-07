@@ -21,7 +21,7 @@ import org.metadon.beans.Blog;
 import org.metadon.beans.BlogMessage;
 import org.metadon.beans.BlogMultimedia;
 import org.metadon.beans.Settings;
-import org.metadon.extern.location.TraceManager;
+import org.metadon.location.TraceManager;
 import org.metadon.utils.ActivityAlert;
 import org.metadon.utils.BlogInfoFormatter;
 import org.metadon.utils.BlogUnserializer;

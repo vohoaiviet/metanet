@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package org.metadon.extern.location;
+package org.metadon.location;
 
 import javax.microedition.location.Criteria;
 import javax.microedition.location.Location;

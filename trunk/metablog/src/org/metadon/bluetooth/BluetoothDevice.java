@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package org.metadon.extern.bluetooth;
+package org.metadon.bluetooth;
 
 import javax.bluetooth.RemoteDevice;
 
