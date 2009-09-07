@@ -9,7 +9,7 @@ package org.metadon.beans;
  *
  * @author Hannes
  */
-public class Payload {
+public class Indicator {
     
     private long timestamp = -1;
     
@@ -29,7 +29,7 @@ public class Payload {
     public boolean containsElevation = false;
     public boolean containsJourneyName = false;
     
-    public Payload(long timestamp) {
+    public Indicator(long timestamp) {
         this.timestamp = timestamp;
     }
     

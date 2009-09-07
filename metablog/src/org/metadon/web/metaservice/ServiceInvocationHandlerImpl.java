@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.metadon.web.metaservice.connection;
+package org.metadon.web.metaservice;
 
 
 import javax.microedition.lcdui.Displayable;
 
-import org.metadon.beans.Payload;
+import org.metadon.beans.Indicator;
 import org.metadon.beans.Settings;
 import org.metadon.control.BlogBrowserLocal;
 import org.metadon.control.Controller;
@@ -34,7 +34,7 @@ public class ServiceInvocationHandlerImpl implements IServiceInvocationHandler {
         //#debug
 //#         System.out.println("invoke service connector logon...");
         try {
-            this.getServiceConnection().logon();
+            this.getServiceConnection().login();
         } catch (IllegalArgumentException iae) {
             //#debug error
             System.out.println("ill. arg.: " + iae);
@@ -52,7 +52,7 @@ public class ServiceInvocationHandlerImpl implements IServiceInvocationHandler {
         }
     }
 
-    public void post(Payload payload) {
+    public void post(Indicator payload) {
         //#debug
 //#         System.out.println("invoke service connector post...");
         try {
@@ -70,7 +70,7 @@ public class ServiceInvocationHandlerImpl implements IServiceInvocationHandler {
     public void onAuthenticationRequestComplete(String info) {
         //#debug
 //#         System.out.println("request ok: " + info);
-        if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGON) {
+        if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGIN) {
             this.controller.setLoggedIn(true);
         } else if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGOUT) {
             this.controller.exit();
@@ -83,7 +83,7 @@ public class ServiceInvocationHandlerImpl implements IServiceInvocationHandler {
     public void onAuthenticationRequestError(String error) {
         //#debug
 //#         System.out.println("request failed: " + error);
-        if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGON) {
+        if (ServiceConnectionKSoap.OPERATION == ServiceConnectionKSoap.OPERATION_LOGIN) {
             Displayable nextScreen = this.controller.getScreen(this.controller.LOGIN_SCR);
             this.controller.show(this.controller.ERROR_ASCR, error, null, nextScreen);
             this.controller.setLoggedIn(false);
@@ -91,6 +91,14 @@ public class ServiceInvocationHandlerImpl implements IServiceInvocationHandler {
             this.controller.exit();
         }
     }
+    
+    /**
+ 	 * Handles a canceled login operation.
+ 	 */
+ 	public void onAuthenticationCancel()
+ 	{
+ 		Controller.show(this.controller.loginForm);
+ 	}
 
     /**
      * Called when a valid result is retrieved from the

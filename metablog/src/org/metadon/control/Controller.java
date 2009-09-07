@@ -17,7 +17,7 @@ import javax.microedition.lcdui.Alert;
 import javax.microedition.lcdui.AlertType;
 
 import org.metadon.beans.Credentials;
-import org.metadon.beans.Payload;
+import org.metadon.beans.Indicator;
 import org.metadon.beans.Settings;
 import org.metadon.bluetooth.BluetoothDevice;
 import org.metadon.bluetooth.BluetoothManager;
@@ -34,7 +34,7 @@ import org.metadon.view.BlogMainScreen;
 import org.metadon.view.LoginForm;
 import org.metadon.view.PlatformInfoScreen;
 import org.metadon.view.PlatformMainScreen;
-import org.metadon.web.metaservice.connection.ServiceInvocationHandlerImpl;
+import org.metadon.web.metaservice.ServiceInvocationHandlerImpl;
 
 import java.io.IOException;
 
@@ -316,7 +316,7 @@ public class Controller extends MIDlet implements CommandListener {
     
     /***************************************************************************************/
   
-    public void postBlog(Payload payload) {
+    public void postBlog(Indicator payload) {
         if (payload == null) {
             return;
         }
@@ -457,10 +457,15 @@ public class Controller extends MIDlet implements CommandListener {
     }
 
     /***************************************************************************************/
-    // display generic screens
-    public void show(Displayable disp) {
-        display.setCurrent(disp);
-    }
+//    // display generic screens
+//    public void show(Displayable disp) {
+//        display.setCurrent(disp);
+//    }
+    
+    public static void show(Displayable screen)
+ 	{
+ 		getDisplay().setCurrent(screen);
+ 	}
 
     // display info collection screens
     public void show(String title, InfoCollector collector) {
