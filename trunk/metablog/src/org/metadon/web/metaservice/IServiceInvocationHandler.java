@@ -7,11 +7,13 @@ package org.metadon.web.metaservice;
 
 public interface IServiceInvocationHandler {
 
-	public void onAuthenticationRequestComplete(String msg);
-	public void onAuthenticationRequestError(String msg);
+	public void onAuthenticationSuccess(String msg);
+	public void onAuthenticationError(String msg);
 	public void onAuthenticationCancel();
-	public void onAuthenticationResponseError(String msg);
 	
-	public void onPublishRequestComplete(String msg);
-	public void onPublishRequestError(String msg);
+	public void onLogoutSuccess(String msg);
+	public void onLogoutError(String msg);
+	
+	public void onPublishComplete(String msg);
+	public void onPublishError(String msg);
 }

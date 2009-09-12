@@ -32,7 +32,7 @@ import de.enough.polish.util.Locale;
 public class ServiceConnectionKSoap implements Runnable
 {
 
-	private boolean	                isThreadRunning	     = false;
+	private boolean	                isThreadRunning;
 	private Credentials	             credentials;
 	private IServiceInvocationHandler	handler;
 	private String	                   endPoint;
@@ -44,15 +44,6 @@ public class ServiceConnectionKSoap implements Runnable
 	private Indicator	                indicator;
 
 	private String	                   comment;
-	private String	                   deviceID;
-
-	private Long	                   timestamp;
-	private String	                   message;
-	private byte[]	                   photo;
-	private Double	                   longitude;
-	private Double	                   latitude;
-	private Double	                   elevation;
-	private String	                   journeyName;
 
 	public static int	                OPERATION;
 	public static final int	          OPERATION_LOGIN	     = 0;
@@ -69,6 +60,8 @@ public class ServiceConnectionKSoap implements Runnable
 	public static final int	          ST_ERR_UNKNOWN_USER	  = 501;
 	public static final int	          ST_ERR_UNKNOWN_PWD	  = 502;
 	public static final int	          ST_ERR_UNKNOWN_DEVICE	= 503;
+	
+	public static String 				 sessionId;
 
 	/**
 	 * 
@@ -179,7 +172,7 @@ public class ServiceConnectionKSoap implements Runnable
 			System.out.println("ServiceConnectionKSoap: remote authentication...");
 
 			// create request
-			SoapObject request = this.getRequestObject("authenticate");
+			SoapObject request = this.getRequestObject("login");
 			request.addProperty("deviceId", credentials.getBtAddress());
 			request.addProperty("username", credentials.getUser());
 			request.addProperty("password", credentials.getKey());
@@ -203,11 +196,14 @@ public class ServiceConnectionKSoap implements Runnable
 
 				System.out.println("Received status: " + loginStatus.getStatusId());
 				if (loginStatus.getStatusId() == ServiceConnectionKSoap.ST_OK)
-					handler.onAuthenticationRequestComplete(Locale.get("gatewayServiceConnection.accountAvailable"));
+				{
+					sessionId = loginStatus.getSessionId();
+					handler.onAuthenticationSuccess(Locale.get("gatewayServiceConnection.accountAvailable"));
+				}
 				else
 				{
 					// TODO fine grain errors
-					handler.onAuthenticationRequestError(Locale.get("gatewayServiceConnection.noAccountAvailable"));
+					handler.onAuthenticationError(Locale.get("gatewayServiceConnection.noAccountAvailable"));
 				}
 			}
 			catch (SecurityException se)
@@ -218,21 +214,21 @@ public class ServiceConnectionKSoap implements Runnable
 			catch (InterruptedIOException e)
 			{
 				System.out.println("ServiceConnectionKSoap: Connection refused: timeout.");
-				this.handler.onAuthenticationResponseError(Locale.get("server.validationService.notAvailable"));
+				this.handler.onAuthenticationError(Locale.get("server.validationService.notAvailable"));
 
 			}
 			catch (IOException e)
 			{
 				System.out.println("ServiceConnectionKSoap: I/O Error. Cause: ");
 				e.printStackTrace();
-				this.handler.onAuthenticationResponseError(Locale.get("server.validationService.notAvailable"));
+				this.handler.onAuthenticationError(Locale.get("server.validationService.notAvailable"));
 
 			}
 			catch (Exception e)
 			{
 				System.out.println("ServiceConnectionKSoap: Unexpected Error. Cause: ");
 				e.printStackTrace();
-				this.handler.onAuthenticationResponseError(Locale.get("server.validationService.notAvailable"));
+				this.handler.onAuthenticationError(Locale.get("server.validationService.notAvailable"));
 
 			}
 			finally
@@ -240,28 +236,70 @@ public class ServiceConnectionKSoap implements Runnable
 				this.cleanUp();
 			}
 		}
-
-		// TODO
-
 		else if (OPERATION == OPERATION_LOGOUT)
 		{
+			// show activity alert
 			activityScreen.setString(Locale.get("gatewayServiceConnection.logout"));
 			Controller.show(activityScreen);
+			
+			System.out.println("ServiceConnectionKSoap: logout...");
+
+			// create request
+			SoapObject request = this.getRequestObject("logout");
+			request.addProperty("sessionId", sessionId);
+			
+			envelope.bodyOut = request;
+			timeoutTimer = new Timer();
+			timeoutTimer.schedule(getInstanceOfTimoutTask(), HTTP_TIMEOUT * 1000);
+			
 			try
 			{
-				// logout silently
-				//#debug
-				//#                 System.out.println("invoke remote logout method...");
-				gatewayService.logout(this.deviceID);
-				this.listener.onAuthenticationRequestComplete("logout ok.");
+				
+				System.out.println("Logout at server...");
+
+				// executes a SOAP method and returns the response
+				this.httpTransport.call(SoapEnvelope.ENV, this.envelope);
+
+				// this SOAP object represents the entire response body - the response envelope is parsed by kSOAP libs.
+				Boolean logoutSuccess = (Boolean) this.envelope.bodyIn;
+
+				System.out.println("Logged out: " + logoutSuccess);
+				handler.onLogoutSuccess("logout ok.");
+			}
+			catch (InterruptedIOException e)
+			{
+				System.out.println("ServiceConnectionKSoap: Connection refused: timeout.");
+				this.handler.onLogoutError(Locale.get("server.validationService.notAvailable"));
+
+			}
+			catch (IOException e)
+			{
+				System.out.println("ServiceConnectionKSoap: I/O Error. Cause: ");
+				e.printStackTrace();
+				this.handler.onLogoutError(Locale.get("server.validationService.notAvailable"));
+
 			}
 			catch (Exception e)
 			{
-				//#debug
-				//#             System.out.println("ex.: "+e.getMessage());
-				listener.onAuthenticationRequestError("logout failed.");
+				System.out.println("ServiceConnectionKSoap: Unexpected Error. Cause: ");
+				e.printStackTrace();
+				this.handler.onLogoutError(Locale.get("server.validationService.notAvailable"));
+
+			}
+			finally
+			{
+				this.cleanUp();
 			}
 		}
+		
+		
+		
+		
+		
+		
+		// TODO only transmit non binary indicator parameters with webservice - binary content als bytestream over simple http connection
+		// step 1: photo
+		// step 2: params
 		else if (OPERATION == OPERATION_PUBLISH)
 		{
 			// get activity screen from monitor
@@ -269,14 +307,17 @@ public class ServiceConnectionKSoap implements Runnable
 			activityScreen.setString(Locale.get("gatewayServiceConnection.posting") + " (" + this.comment
 			                         + ") ...");
 
+			// send photo binary over http with indicator id
+			
+			
 			// photo data must be encoded as a base64 string in order to send it within
 			// an xml-based protocol - the photo payload is increasing by a factor of 1.33
-			//#debug
-			//#         System.out.println("start encoder...");
+			
+			
 			String encodedPhoto = null;
-			if (this.photo != null)
+			if (indicator.getPhoto() != null)
 			{
-				encodedPhoto = Base64Encoder.encode(this.photo);
+				encodedPhoto = Base64Encoder.encode(indicator.getPhoto());
 			}
 			try
 			{
@@ -330,15 +371,7 @@ public class ServiceConnectionKSoap implements Runnable
 
 	private void cleanUp()
 	{
-		this.deviceID = null;
-
-		this.timestamp = null;
-		this.message = null;
-		this.photo = null;
-		this.longitude = null;
-		this.latitude = null;
-		this.elevation = null;
-		this.journeyName = null;
+		indicator = null;
 	}
 
 }
