@@ -7,6 +7,7 @@
 
 	<!-- set global properties for this build -->
 	<property name="project.name" value="Metamap" />
+	<property name="project.name.lowercase" value="metamap" />
 
 	<property name="source.dir" value="${basedir}/source" />
 	<property name="lib.dir" value="${basedir}/lib" />
@@ -84,13 +85,13 @@
 		<copy file="${gwt.dir}/gwt-servlet.jar" todir="${web.dir.lib}" />
 		
 		<!-- clean previous deployment -->
-		<delete file="${deploy.dir}/${project.name}.war" />
-		<delete dir="${deploy.dir}/${project.name}" />
+		<delete file="${deploy.dir}/${project.name.lowercase}.war" />
+		<delete dir="${deploy.dir}/${project.name.lowercase}" />
 		
 		<!-- deployment -->
-		<zip destfile="${basedir}/${project.name}.war" basedir="${web.dir}"/>
-		<copy file="${basedir}/${project.name}.war" todir="${deploy.dir}"/>
-		<delete file="${basedir}/${project.name}.war" />
+		<zip destfile="${basedir}/${project.name.lowercase}.war" basedir="${web.dir}"/>
+		<copy file="${basedir}/${project.name.lowercase}.war" todir="${deploy.dir}"/>
+		<delete file="${basedir}/${project.name.lowercase}.war" />
 	</target>
 
 
