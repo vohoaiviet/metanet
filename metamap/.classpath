@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="source/src"/>
+	<classpathentry kind="src" path="source/service"/>
+	<classpathentry kind="src" path="source/generated"/>
+	<classpathentry kind="src" path="source/test"/>
+	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v5.5"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axiom-api-1.2.8.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axiom-dom-1.2.8.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axiom-impl-1.2.8.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-adb-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-adb-codegen-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-ant-plugin-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-clustering-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-codegen-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-corba-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-fastinfoset-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-java2wsdl-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-jaxbri-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-jaxws-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-jibx-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-json-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-kernel-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-metadata-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-mtompolicy-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-saaj-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-spring-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-transport-http-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-transport-local-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/axis2-xmlbeans-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/bcel-5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/commons-fileupload-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/geronimo-annotation_1.0_spec-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/geronimo-jaxws_2.1_spec-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/geronimo-saaj_1.3_spec-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/geronimo-stax-api_1.0_spec-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/geronimo-ws-metadata_2.0_spec-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/httpcore-4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jalopy-1.5rc3.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jaxb-impl-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jaxb-xjc-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jettison-1.0-RC2.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jibx-bind-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/jibx-run-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/mail-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/mex-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/neethi-2.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/smack-3.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/smackx-3.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/soapmonitor-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/woden-api-1.0M8.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/woden-impl-dom-1.0M8.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/wsdl4j-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/wstx-asl-3.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/xalan-2.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/xercesImpl-2.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/xml-apis-1.3.02.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/xml-resolver-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/axis/XmlSchema-1.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/hibernate/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/hibernate/hibernate-testing.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamapGWT2/lib/joda-time-1.2.1.jar"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>
