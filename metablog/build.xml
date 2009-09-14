@@ -26,7 +26,7 @@
 	<property name="config.metaDonNamespace" value="http://service.mts.mobilkom.at/"/>
 	
 	<!-- set static environment props - polish version 2.0.4 -->
-	<property name="polish.home" location="${basedir}/polish" />
+	<property name="polish.home" location="${basedir}/polish-2.0.4" />
 	<property name="wtk.home" value="${polish.home}/native/wtk-2.5.2" />
 
 	<!-- emulators with local references -->
