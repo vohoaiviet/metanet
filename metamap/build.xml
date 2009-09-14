@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<project name="Metamap" default="deploy" basedir=".">
+<project name="metamap" default="deploy" basedir=".">
 
 	<property file="build.properties" />
 	<property name="config.version" value="1.0.0" />
@@ -11,7 +11,7 @@
 	<property name="source.dir" value="${basedir}/source" />
 	<property name="lib.dir" value="${basedir}/lib" />
 	<property name="deploy.dir" value="${tomcat.home}/webapps" />
-	<property name="gwt.dir" value="C:\Programme\Eclipse-3.5.0-Galileo\plugins\com.google.gwt.eclipse.sdkbundle.win32_1.7.0.v200907291526\gwt-windows-1.7.0" />
+	<property name="gwt.dir" value="${basedir}/gwt-1.7-win" />
 
 	<property name="web.dir" value="${basedir}/war" />
 	<property name="web.dir.build" value="${web.dir}/WEB-INF/classes" />
@@ -35,7 +35,7 @@
 		<delete dir="${web.dir.lib}" />
 	</target>
 
-	<path id="classpath">
+	<path id="class.path">
 		<pathelement location="${gwt.dir}/gwt-user.jar" />
 		<pathelement location="${gwt.dir}/gwt-dev-windows.jar" />
 		<fileset dir="${web.dir.lib}" includes="**/*.jar" />
@@ -47,7 +47,7 @@
 
 	<target name="compile" depends="compile-gwt" description="Compiling the Java source code...">
 		<javac destdir="${web.dir.build}" debug="${javac.debug}" deprecation="true" includes="**" excludes="**/client/*.java" encoding="utf-8" source="1.5" target="1.5" nowarn="true" debuglevel="lines,vars,source">
-			<classpath refid="classpath" />
+			<classpath refid="class.path" />
 			<src path="${src.dir}" />
 			<src path="${src.service.dir}" />
 			<src path="${src.generated.dir}" />
@@ -58,7 +58,7 @@
 		<java failonerror="true" classname="com.google.gwt.dev.Compiler" fork="true">
 			<classpath>
 				<pathelement location="${src.dir}" />
-				<path refid="classpath" />
+				<path refid="class.path" />
 			</classpath>
 			<jvmarg value="-Xmx256M" />
 			<arg value="org.metadon.${project.name}"/>
@@ -69,7 +69,7 @@
 		<java failonerror="true" fork="true" classname="com.google.gwt.dev.HostedMode">
 			<classpath>
 				<pathelement location="${src.dir}" />
-				<path refid="classpath" />
+				<path refid="class.path" />
 			</classpath>
 			<jvmarg value="-Xmx256M" />
 			<arg value="-startupUrl" />
@@ -82,6 +82,12 @@
 	<target name="deploy" depends="init, compile" description="Deploying application...">
 		<!-- TODO copy all necessary libs -->
 		<copy file="${gwt.dir}/gwt-servlet.jar" todir="${web.dir.lib}" />
+		
+		<!-- clean previous deployment -->
+		<delete file="${deploy.dir}/${project.name}.war" />
+		<delete dir="${deploy.dir}/${project.name}" />
+		
+		<!-- deployment -->
 		<zip destfile="${basedir}/${project.name}.war" basedir="${web.dir}"/>
 		<copy file="${basedir}/${project.name}.war" todir="${deploy.dir}"/>
 		<delete file="${basedir}/${project.name}.war" />
