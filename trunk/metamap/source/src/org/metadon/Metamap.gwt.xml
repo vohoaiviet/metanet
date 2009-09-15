@@ -7,11 +7,15 @@
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
   <!-- any one of the following lines.                            -->
-  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
-  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/>-->
+  <inherits name='com.google.gwt.user.theme.chrome.Chrome'/>
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
+  <inherits name='org.gwtopenmaps.openlayers.OpenLayers'/>
+  
+  <!--Application specific style sheet.              -->
+  <stylesheet src='Metamap.css' />
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='org.metadon.client.Metamap'/>
