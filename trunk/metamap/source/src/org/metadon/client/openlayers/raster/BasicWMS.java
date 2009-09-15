@@ -48,9 +48,9 @@ public class BasicWMS implements OpenLayersMap
 		mapHandler.getMap().addControl(new LayerSwitcher());
 
 		//Center and Zoom
-		double lon = 4.0;
-		double lat = 5.0;
-		int zoom = 5;
+		double lon = 20.27;
+		double lat = 44.49;
+		int zoom = 8;
 		mapHandler.getMap().setCenter(new LonLat(lon, lat), zoom);
 	}
 
