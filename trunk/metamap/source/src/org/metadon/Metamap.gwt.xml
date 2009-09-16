@@ -13,9 +13,9 @@
 
   <!-- Other module inherits                                      -->
   <inherits name='org.gwtopenmaps.openlayers.OpenLayers'/>
+  <inherits name='com.gwtext.GwtExt'/>
   
   <!--Application specific style sheet.              -->
-  <stylesheet src='Metamap.css' />
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='org.metadon.client.Metamap'/>

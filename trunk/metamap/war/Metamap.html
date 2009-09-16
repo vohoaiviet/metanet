@@ -12,8 +12,27 @@
 
     <title>Metanet</title>
 
-    <script src="http://openlayers.org/api/2.8/OpenLayers.js"></script>
-    <script src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+	<link rel=StyleSheet href="css/metamap.css" type="text/css" media=screen />
+	
+
+	<!--  used dependencies of gwtext library  -->
+	<script type="text/javascript" src="js/gwtext-dep/ext/ext-base.js"></script>
+	<script type="text/javascript" src="js/gwtext-dep/ext/ext-all.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="js/gwtext-dep/ext/res/css/ext-all.css"/>
+	<link rel="stylesheet" type="text/css" href="js/gwtext-dep/ext/res/css/xtheme-gray.css"/>
+	
+	<script type="text/javascript" src="js/gwtext-dep/mapstraction/mapstraction.js"></script>
+	<script type="text/javascript" src="js/gwtext-dep/mapstraction/mapstraction-geocode.js"></script>
+	<script type="text/javascript" src="js/gwtext-dep/mapstraction/mapstraction-route.js"></script>
+	
+	<script type="text/javascript" src="js/gwtext-dep/tibco/pagebus.js"></script>
+	
+	
+	<!--  used dependencies for map library  -->
+    <script type="text/javascript" src="http://openlayers.org/api/2.8/OpenLayers.js"></script>
+    <script type="text/javascript" src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAARrCK38aboqQKDotehUjrPhTb-vLQlFZmc2N8bgWI8YDPp5FEVBQ-MFjXfKfAvdbsbp3pa0q7fQNDDA"></script>
     
     <!--                                           -->
     <!-- This script loads your compiled module.   -->
