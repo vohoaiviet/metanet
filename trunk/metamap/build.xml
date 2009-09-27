@@ -47,7 +47,7 @@
 	</path>
 
 	<target name="compile" depends="compile-gwt" description="Compiling the Java source code...">
-		<javac destdir="${web.dir.build}" debug="${javac.debug}" deprecation="true" includes="**" excludes="**/client/*.java" encoding="utf-8" source="1.5" target="1.5" nowarn="true" debuglevel="lines,vars,source">
+		<javac destdir="${web.dir.build}" debug="${javac.debug}" deprecation="false" includes="**" excludes="**/client/*.java" encoding="utf-8" source="1.5" target="1.5" nowarn="true">
 			<classpath refid="class.path" />
 			<src path="${src.dir}" />
 			<src path="${src.service.dir}" />
