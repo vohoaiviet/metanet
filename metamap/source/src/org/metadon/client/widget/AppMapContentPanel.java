@@ -40,7 +40,7 @@ public class AppMapContentPanel extends Panel
 	private void createMapPanel()
 	{
 		mapPanel = new OpenLayersMap();
-		mapPanel.setTitle("Test");
+//		mapPanel.setTitle("Test");
 		mapPanel.setHeight(600);
 		mapPanel.setWidth(1200);
 		mapPanel.addLargeControls();

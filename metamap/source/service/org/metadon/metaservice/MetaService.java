@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.axis2.context.MessageContext;
-import org.apache.log4j.Logger;
 import org.metadon.metaservice.util.Status;
 
 /**
@@ -23,7 +22,7 @@ public class MetaService
 //		this.dbManager = DBClient.getInstance();
 	}
 
-	private Logger	log	= Logger.getLogger(MetaService.class);
+//	private Logger	log	= Logger.getLogger(MetaService.class);
 
 	/********************************************************************/
 
@@ -32,14 +31,14 @@ public class MetaService
 	                    String user,
 	                    String password)
 	{
-		log.info("Login received.");
+//		log.info("Login received.");
 
 		// get SOAP message context
 		MessageContext msgCxt = MessageContext.getCurrentMessageContext();
-		log.debug("SOAP envelope: " + msgCxt.getEnvelope().toString());
-		log.debug("DeviceId: " + deviceID);
-		log.debug("Username: " + user);
-		log.debug("Password: " + password);
+//		log.debug("SOAP envelope: " + msgCxt.getEnvelope().toString());
+//		log.debug("DeviceId: " + deviceID);
+//		log.debug("Username: " + user);
+//		log.debug("Password: " + password);
 
 		// TODO authenticate user
 		//		boolean isValid = this.dbManager.isValidUser(user, deviceID);
@@ -57,12 +56,12 @@ public class MetaService
 	// logout mobile user
 	public boolean logout(String sessionId)
 	{
-		log.info("Logout received.");
+//		log.info("Logout received.");
 
 		// get SOAP message context
 		MessageContext msgCxt = MessageContext.getCurrentMessageContext();
-		log.debug("SOAP envelope: " + msgCxt.getEnvelope().toString());
-		log.debug("SessionId: " + sessionId);
+//		log.debug("SOAP envelope: " + msgCxt.getEnvelope().toString());
+//		log.debug("SessionId: " + sessionId);
 		
 		// TODO check session id
 
@@ -93,17 +92,17 @@ public class MetaService
 		
 		// get SOAP message context
 		MessageContext msgCxt = MessageContext.getCurrentMessageContext();
-		log.debug("SOAP envelope: " + msgCxt.getEnvelope().toString());
-		
-		log.debug("SessionId: " + sessionId);
-		log.debug("Creation date: " + sdf.format(new Date(tsCreation)));
-		log.debug("Trace name: " + traceName);
-		log.debug("Description: " + description);
-		log.debug("CSV keys: " + csvKeys);
-		log.debug("Longitude: " + longitude);
-		log.debug("Latitude: " + latitude);
-		log.debug("Altitude: " + altitude);
-		log.debug("Contains image: : " + (encodedImage != null?"yes":"no"));
+//		log.debug("SOAP envelope: " + msgCxt.getEnvelope().toString());
+//		
+//		log.debug("SessionId: " + sessionId);
+//		log.debug("Creation date: " + sdf.format(new Date(tsCreation)));
+//		log.debug("Trace name: " + traceName);
+//		log.debug("Description: " + description);
+//		log.debug("CSV keys: " + csvKeys);
+//		log.debug("Longitude: " + longitude);
+//		log.debug("Latitude: " + latitude);
+//		log.debug("Altitude: " + altitude);
+//		log.debug("Contains image: : " + (encodedImage != null?"yes":"no"));
 		
 		// TODO check sessionId
 		

@@ -70,9 +70,9 @@
 	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/axis/xml-resolver-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/hibernate/hibernate-testing.jar"/>
 	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/hibernate/hibernate3.jar"/>
-	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/joda-time-1.2.1.jar"/>
 	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/gwt-extensions/openlayers_gwt-0.4.jar"/>
 	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/gwt-extensions/gwtext.jar"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/resolume/Desktop/workspace/metanet/metamap/lib/gwt-extensions/gwt-log-2.6.2.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
