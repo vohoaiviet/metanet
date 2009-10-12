@@ -64,7 +64,7 @@ public class Metamap implements EntryPoint//, HistoryListener
 		applicationPanelWrapper.add(applicationPanel);
 		mainPanel.add(applicationPanelWrapper, centerLayoutData);
 
-		new Viewport(mainPanel);
+		Viewport v = new Viewport(mainPanel);
 		
 		Log.debug("Module loaded.");
 	}

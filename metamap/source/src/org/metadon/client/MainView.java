@@ -13,7 +13,7 @@ import com.gwtext.client.widgets.layout.BorderLayout;
 import com.gwtext.client.widgets.layout.BorderLayoutData;
 import com.gwtext.client.widgets.layout.FitLayout;
 
-public abstract class MainPanel extends Panel
+public abstract class MainView extends Panel
 {
 
 	private String	               sourceIconCls	= "source-icon";
@@ -22,7 +22,7 @@ public abstract class MainPanel extends Panel
 
 	protected Panel	            panel;
 
-	protected MainPanel()
+	protected MainView()
 	{
 		setTitle(getTitle());
 		setClosable(true);
@@ -34,7 +34,7 @@ public abstract class MainPanel extends Panel
 		addListener(new PanelListenerAdapter() {
 			public void onActivate(Panel panel)
 			{
-				MainPanel.this.onActivate();
+				MainView.this.onActivate();
 			}
 		});
 	}

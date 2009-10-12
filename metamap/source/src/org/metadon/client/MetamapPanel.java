@@ -1,6 +1,4 @@
-package org.metadon.client.widget;
-
-import org.metadon.client.Metamap;
+package org.metadon.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.gwtext.client.core.EventObject;
@@ -16,39 +14,30 @@ import com.gwtext.client.widgets.map.MapPanel;
 import com.gwtext.client.widgets.map.Marker;
 import com.gwtext.client.widgets.map.OpenLayersMap;
 
-public class AppMapContentPanel extends Panel
+public class MetamapPanel extends Panel
 {
 	
-	private MapPanel mapPanel;
+	private MapPanel mapInstance;
 
 	
-	public AppMapContentPanel()
+	public MetamapPanel()
    {
-		createMapPanel();
-		addMapControls();
-//		new Viewport(mapPanel);
-		this.add(mapPanel);
-		updateMap("belgrade", JavaScriptObjectHelper.createObject(), this);
+		mapInstance = createMapInstance();
+		mapInstance.addLargeControls();
 		
+		addMapControls();
+		add(mapInstance);
+		updateMap("belgrade", JavaScriptObjectHelper.createObject(), this);
    }
 	
-	public void named(String identifier)
+	private MapPanel createMapInstance()
 	{
-		Metamap.uiRegistry.put(identifier, mapPanel);
-	}
-
-	private void createMapPanel()
-	{
-		mapPanel = new OpenLayersMap();
-//		mapPanel.setTitle("Test");
-		mapPanel.setHeight(600);
-		mapPanel.setWidth(1200);
-		mapPanel.addLargeControls();
+		return new OpenLayersMap();
 	}
 	
 	private void addMapControls()
 	{
-		final AppMapContentPanel _this = this;
+		final MetamapPanel _this = this;
 	 
 		final TextField addressField = new TextField();
 		addressField.setValue("belgrade");
@@ -66,10 +55,10 @@ public class AppMapContentPanel extends Panel
 		toolbar.addSpacer();
 		toolbar.addButton(refreshMapButton);
 	 
-		mapPanel.setTopToolbar(toolbar);
+		mapInstance.setTopToolbar(toolbar);
 	}
 	
-	public native void updateMap(String locationAddress, JavaScriptObject llp, AppMapContentPanel _this) /*-{
+	public native void updateMap(String locationAddress, JavaScriptObject llp, MetamapPanel _this) /*-{
 		var geo = new $wnd.GClientGeocoder();
 	 
 		geo.getLocations(locationAddress, 
@@ -85,7 +74,7 @@ public class AppMapContentPanel extends Panel
 		    		llp.lat = place.Point.coordinates[1];
 		    		llp.lon = place.Point.coordinates[0];
  
-		    		_this.@org.metadon.client.widget.AppMapContentPanel::renderMap(Lcom/google/gwt/core/client/JavaScriptObject;)(llp);
+		    		_this.@org.metadon.client.MetamapPanel::renderMap(Lcom/google/gwt/core/client/JavaScriptObject;)(llp);
 	      		}
       		}
       	);
@@ -98,10 +87,15 @@ public class AppMapContentPanel extends Panel
 		double lon = Double.parseDouble(JavaScriptObjectHelper.getAttribute(jsObj, "lon"));
 	 
 		LatLonPoint latLonPoint = new LatLonPoint(lat, lon);
-		mapPanel.setCenterAndZoom(latLonPoint, 14);
-		mapPanel.addMarker(new Marker(latLonPoint));
+		mapInstance.setCenterAndZoom(latLonPoint, 14);
+		mapInstance.addMarker(new Marker(latLonPoint));
 	}
-	
+
+	public MapPanel getMapInstance()
+   {
+   	return mapInstance;
+   }
+
 	
 
 }
