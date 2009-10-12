@@ -8,13 +8,14 @@
   <!-- the theme of your GWT application by uncommenting          -->
   <!-- any one of the following lines.                            -->
   <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/>-->
-  <inherits name='com.google.gwt.user.theme.chrome.Chrome'/>
+  <!--<inherits name='com.google.gwt.user.theme.chrome.Chrome'/>-->
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
   <inherits name='org.gwtopenmaps.openlayers.OpenLayers'/>
   <inherits name='com.gwtext.GwtExt'/>
-  <inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />
+  <!--<inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />-->
+  <inherits name="com.allen_sauer.gwt.log.gwt-log-OFF" />
   
   <!--Application specific style sheet.              -->
 

@@ -22,10 +22,12 @@
 
 package org.metadon.client;
 
-import com.google.gwt.user.client.ui.HTML;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.gwtext.client.core.Margins;
 import com.gwtext.client.core.RegionPosition;
-import com.gwtext.client.widgets.BoxComponent;
 import com.gwtext.client.widgets.HTMLPanel;
 import com.gwtext.client.widgets.Panel;
 import com.gwtext.client.widgets.TabPanel;
@@ -35,12 +37,8 @@ import com.gwtext.client.widgets.layout.BorderLayout;
 import com.gwtext.client.widgets.layout.BorderLayoutData;
 import com.gwtext.client.widgets.layout.FitLayout;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
-
-public class MetamapMainPanel extends MainPanel
+public class MetamapAdminView extends MainPanel
 {
 
 	public Panel getViewPanel()
@@ -56,16 +54,16 @@ public class MetamapMainPanel extends MainPanel
 
 			//add north panel
 			//raw html
-			BoxComponent northPanel = new BoxComponent();
-			northPanel.setEl(new HTML("<p>north - generally for menus, toolbars and/or advertisements</p>").getElement());
-			northPanel.setHeight(32);
-			borderPanel.add(northPanel, new BorderLayoutData(RegionPosition.NORTH));
+//			BoxComponent northPanel = new BoxComponent();
+//			northPanel.setEl(new HTML("Welcome admin.").getElement());
+//			northPanel.setHeight(10);
+//			borderPanel.add(northPanel, new BorderLayoutData(RegionPosition.NORTH));
 
 			//add south panel
-			Panel southPanel = new HTMLPanel("<p>south - generally for informational stuff, also could be for status bar</p>");
+			Panel southPanel = new HTMLPanel("TODO");
 			southPanel.setHeight(100);
 			southPanel.setCollapsible(true);
-			southPanel.setTitle("South");
+			southPanel.setTitle("Status");
 
 			BorderLayoutData southData = new BorderLayoutData(RegionPosition.SOUTH);
 			southData.setMinSize(100);
@@ -85,7 +83,7 @@ public class MetamapMainPanel extends MainPanel
 			eastData.setSplit(true);
 			eastData.setMinSize(175);
 			eastData.setMaxSize(400);
-			eastData.setMargins(new Margins(0, 0, 5, 0));
+			eastData.setMargins(new Margins(5, 0, 5, 0));
 
 			borderPanel.add(eastPanel, eastData);
 
@@ -120,7 +118,7 @@ public class MetamapMainPanel extends MainPanel
 			final AccordionLayout accordion = new AccordionLayout(true);
 
 			Panel westPanel = new Panel();
-			westPanel.setTitle("West");
+			westPanel.setTitle("Menu");
 			westPanel.setCollapsible(true);
 			westPanel.setWidth(200);
 			westPanel.setLayout(accordion);
@@ -143,13 +141,14 @@ public class MetamapMainPanel extends MainPanel
 			westData.setSplit(true);
 			westData.setMinSize(175);
 			westData.setMaxSize(400);
-			westData.setMargins(new Margins(0, 5, 0, 0));
+			westData.setMargins(new Margins(5, 5, 0, 0));
 
 			borderPanel.add(westPanel, westData);
 
 			TabPanel centerPanel = new TabPanel();
 			centerPanel.setDeferredRender(false);
 			centerPanel.setActiveTab(0);
+			centerPanel.setMargins(0, 0, 0, 0);
 
 			Panel centerPanelOne = new HTMLPanel();
 			centerPanelOne.setHtml("<p><b>Done reading me? Close me by clicking the X in the top right corner.</b></p>\n"
