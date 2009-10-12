@@ -1,5 +1,7 @@
 package org.metadon.client.widget;
 
+import org.metadon.client.MetamapPanel;
+
 import com.google.gwt.user.client.ui.DockPanel;
 
 /**
@@ -39,9 +41,9 @@ public class AppContainer
 		return child;
 	}
 	
-	public AppMapContentPanel withMapContentPanel()
+	public MetamapPanel withMapContentPanel()
 	{
-		final AppMapContentPanel child = new AppMapContentPanel();
+		final MetamapPanel child = new MetamapPanel();
 		parent.add(child);
 		return child;
 	}
