@@ -20,7 +20,7 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
  
-package org.metadon.client;
+package org.metadon.client.admin.view.widget;
 
 import com.gwtext.client.data.Record;
 import com.gwtext.client.data.SimpleStore;

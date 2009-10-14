@@ -1,13 +1,13 @@
 package org.metadon.client;
 
-import com.gwtext.client.core.EventObject;
+import org.metadon.client.admin.view.panel.WelcomePanel;
+
+import com.gwtext.client.core.Margins;
 import com.gwtext.client.core.RegionPosition;
-import com.gwtext.client.widgets.Button;
+import com.gwtext.client.widgets.HTMLPanel;
 import com.gwtext.client.widgets.Panel;
 import com.gwtext.client.widgets.Toolbar;
-import com.gwtext.client.widgets.ToolbarButton;
 import com.gwtext.client.widgets.Window;
-import com.gwtext.client.widgets.event.ButtonListenerAdapter;
 import com.gwtext.client.widgets.event.PanelListenerAdapter;
 import com.gwtext.client.widgets.layout.BorderLayout;
 import com.gwtext.client.widgets.layout.BorderLayoutData;
@@ -16,11 +16,10 @@ import com.gwtext.client.widgets.layout.FitLayout;
 public abstract class MainView extends Panel
 {
 
-	private String	               sourceIconCls	= "source-icon";
-	private ToolbarButton	      loginButton;
-	private Toolbar	            toolbar;
-
-	protected Panel	            panel;
+	protected Panel	contentPanel;
+	
+	protected WelcomePanel	welcomePanel;
+	protected Panel	statusPanel;
 
 	protected MainView()
 	{
@@ -37,10 +36,13 @@ public abstract class MainView extends Panel
 				MainView.this.onActivate();
 			}
 		});
+
+		contentPanel = new Panel();
+		contentPanel.setLayout(new BorderLayout());
 	}
 
 	public abstract Panel getViewPanel();
-	
+
 	protected void onActivate()
 	{
 		Panel viewPanel = getViewPanel();
@@ -52,31 +54,19 @@ public abstract class MainView extends Panel
 
 	protected void afterRender()
 	{
-
-		ButtonListenerAdapter listener = new ButtonListenerAdapter() {
-			public void onClick(Button button,
-			                    EventObject e)
-			{
-				login();
-			}
-		};
-
-		loginButton = new ToolbarButton("Login", listener);
-		loginButton.setIconCls(sourceIconCls);
-
-		toolbar = getTopToolbar();
-
-		toolbar.addFill();
-		toolbar.addButton(loginButton);
-
-		addViewPanel();
+		appendWelcomePanel();
+		appendStatusPanel();
+		wrapViewPanel();
 	}
 
-	private void addViewPanel()
+	/**
+	 * Wraps the view panel.
+	 */
+	protected void wrapViewPanel()
 	{
-		Panel mainPanel = new Panel();
-		mainPanel.setBorder(false);
-		mainPanel.setLayout(new BorderLayout());
+		Panel wrapperPanel = new Panel();
+		wrapperPanel.setBorder(false);
+		wrapperPanel.setLayout(new BorderLayout());
 
 		Panel viewPanel = getViewPanel();
 		if (viewPanel instanceof Window)
@@ -88,23 +78,63 @@ public abstract class MainView extends Panel
 		viewPanel.setBorder(false);
 
 		BorderLayoutData centerLayoutData = new BorderLayoutData(RegionPosition.CENTER);
-		centerLayoutData.setMargins(5, 5, 5, 5);
-		mainPanel.add(viewPanel, centerLayoutData);
+		centerLayoutData.setMargins(0, 0, 0, 0);
+		wrapperPanel.add(viewPanel, centerLayoutData);
+
+		add(wrapperPanel);
+	}
+
+	/**
+	 * Appends the welcome Panel at the top of the view.
+	 * 
+	 */
+	private void appendWelcomePanel()
+	{
+		welcomePanel = new WelcomePanel();
+		welcomePanel.setTitle("Welcome Guest!");
+
+		BorderLayoutData welcomeData = new BorderLayoutData(RegionPosition.NORTH);
+		welcomeData.setMinSize(100);
+		welcomeData.setMaxSize(150);
+		welcomeData.setMargins(new Margins(5, 5, 5, 5));
+		welcomeData.setSplit(false);
 		
-		add(mainPanel);
+		welcomePanel.setLoginView();
+		
+		contentPanel.add(welcomePanel, welcomeData);
 	}
 
-	protected boolean showEvents()
+	/**
+	 * Appends the status Panel at the bottom of the view.
+	 * 
+	 */
+	private void appendStatusPanel()
 	{
-		return false;
+		statusPanel = new HTMLPanel("Show status info here.");
+		statusPanel.setHeight(100);
+		statusPanel.setCollapsible(true);
+		statusPanel.setTitle("Status");
+
+		BorderLayoutData southData = new BorderLayoutData(RegionPosition.SOUTH);
+		southData.setMinSize(100);
+		southData.setMaxSize(150);
+		southData.setMargins(new Margins(0, 0, 0, 0));
+		southData.setSplit(true);
+
+		contentPanel.add(statusPanel, southData);
 	}
+	
 
-	private void login()
-	{
+	public WelcomePanel getWelcomePanel()
+   {
+   	return welcomePanel;
+   }
 
-		// TODO
-	}
-
-
+	public Panel getStatusPanel()
+   {
+   	return statusPanel;
+   }
+	
+	
 
 }

@@ -1,6 +1,6 @@
 package org.metadon.client;
 
-import java.util.HashMap;
+import org.metadon.client.admin.view.AdminMainView;
 
 import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.core.client.EntryPoint;
@@ -20,51 +20,55 @@ import com.gwtext.client.widgets.layout.FitLayout;
  */
 public class Metamap implements EntryPoint//, HistoryListener
 {
-
-	public static HashMap<String, Panel>	uiRegistry	= new HashMap<String, Panel>();
+	private String	               metamapIconCls	= "map-icon";
 
 	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad()
 	{
-		//create the main panel and assign it a BorderLayout
-		Panel mainPanel = new Panel();
-		mainPanel.setLayout(new BorderLayout());
+		// TODO create async login service
+		
+		
+		
+		// create the root panel
+		Panel rootPanel = new Panel();
+		rootPanel.setLayout(new BorderLayout());
 
-		BorderLayoutData northLayoutData = new BorderLayoutData(RegionPosition.NORTH);
-		northLayoutData.setSplit(false);
 
+		// create application tab panel
+		TabPanel applicationTabPanel = new TabPanel();
+		applicationTabPanel.setBodyBorder(false);
+		applicationTabPanel.setEnableTabScroll(true);
+		applicationTabPanel.setAutoScroll(true);
+		applicationTabPanel.setAutoDestroy(false);
+		applicationTabPanel.setActiveTab(0);
+
+		Panel applicationTabPanelWrapper = new Panel();
+		applicationTabPanelWrapper.setLayout(new FitLayout());
+		applicationTabPanelWrapper.setBorder(false);
+		applicationTabPanelWrapper.setBodyBorder(false);
+
+		// create application tab: metamap
+		final Panel metamapTab = new Panel();
+		metamapTab.setTitle("Metamap");
+		metamapTab.setPaddings(0);
+		metamapTab.setLayout(new FitLayout());
+		metamapTab.setIconCls(metamapIconCls);
+		
+		final AdminMainView metamapAdminView = new AdminMainView();
+		metamapTab.add(metamapAdminView); // add tab content
+
+		// append
 		BorderLayoutData centerLayoutData = new BorderLayoutData(RegionPosition.CENTER);
 		centerLayoutData.setMargins(new Margins(5, 0, 5, 5));
-
-		// define application tab panel
-		TabPanel applicationPanel = new TabPanel();
-		applicationPanel.setBodyBorder(false);
-		applicationPanel.setEnableTabScroll(true);
-		applicationPanel.setAutoScroll(true);
-		applicationPanel.setAutoDestroy(false);
-		applicationPanel.setActiveTab(0);
-
-		Panel applicationPanelWrapper = new Panel();
-		applicationPanelWrapper.setLayout(new FitLayout());
-		applicationPanelWrapper.setBorder(false);
-		applicationPanelWrapper.setBodyBorder(false);
-
-		// define tab
-		final Panel introPanel = new Panel();
-		introPanel.setTitle("Metamap");
-		introPanel.setPaddings(0);
-		introPanel.setLayout(new FitLayout());
-		introPanel.setIconCls("map-icon");
-		final MetamapAdminView metamapAdminView = new MetamapAdminView();
-		introPanel.add(metamapAdminView); // add tab content
-
-		applicationPanel.add(introPanel, centerLayoutData); // add tab to tabPanel
-		applicationPanelWrapper.add(applicationPanel);
-		mainPanel.add(applicationPanelWrapper, centerLayoutData);
-
-		Viewport v = new Viewport(mainPanel);
+		
+		applicationTabPanel.add(metamapTab, centerLayoutData); // add tab to tabPanel
+		applicationTabPanelWrapper.add(applicationTabPanel);
+		
+		
+		rootPanel.add(applicationTabPanelWrapper, centerLayoutData);
+		new Viewport(rootPanel);
 		
 		Log.debug("Module loaded.");
 	}
