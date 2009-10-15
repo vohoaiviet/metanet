@@ -1,3 +1,57 @@
+.map-icon {
+	background-image: url( images/icons/map.png ) !important;
+}
+
+.login-icon {
+	background-image: url( images/icons/door_in.png ) !important;
+}
+
+.logout-icon {
+	background-image: url( images/icons/door_out.png ) !important;
+}
+
+.rs-flag-icon {
+	background-image: url( images/icons/rs.png ) !important;
+}
+
+.at-flag-icon {
+	background-image: url( images/icons/at.png ) !important;
+}
+
+.gb-flag-icon {
+	background-image: url( images/icons/gb.png ) !important;
+}
+
+.error-icon {
+	background-image: url( images/icons/cancel.png ) !important;
+}
+
+.accept-icon {
+	background-image: url( images/icons/accept.png ) !important;
+}
+
+.warn-icon {
+	background-image: url( images/icons/error.png ) !important;
+}
+
+.help-icon {
+	background-image: url( images/icons/help.png ) !important;
+}
+
+.info-icon {
+	background-image: url( images/icons/information.png ) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 /*nav filter*/
 .x-btn-pressed.filter-btn .x-btn-text {
 	background-image: url( 'images/funnel_X.gif' );
@@ -687,6 +741,4 @@
 	background-image: url( images/silk/bug.gif) !important;
 }
 
-.map-icon {
-	background-image: url( images/silk/map.gif ) !important;
-}
+
