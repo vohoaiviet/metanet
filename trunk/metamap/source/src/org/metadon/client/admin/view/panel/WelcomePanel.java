@@ -1,10 +1,15 @@
 package org.metadon.client.admin.view.panel;
 
+import org.metadon.client.admin.view.AboutWindow;
+
+import com.google.gwt.user.client.ui.Image;
 import com.gwtext.client.core.EventObject;
 import com.gwtext.client.widgets.Button;
 import com.gwtext.client.widgets.Panel;
 import com.gwtext.client.widgets.event.ButtonListenerAdapter;
 import com.gwtext.client.widgets.form.TextField;
+import com.gwtext.client.widgets.layout.ColumnLayout;
+import com.gwtext.client.widgets.layout.ColumnLayoutData;
 import com.gwtext.client.widgets.layout.HorizontalLayout;
 
 
@@ -19,16 +24,17 @@ public class WelcomePanel extends Panel
 	private String	               gbFlagIconCls	= "gb-flag-icon";
 
 	
+	
 	public void setLoginView()
 	{
-		// TODO layout
+//		Panel panel = new Panel();
+//		panel.setLayout(new ColumnLayout());
 		
-		this.removeAll();
+		removeAll();
 		
 		Panel loginPanel = new Panel();
 		loginPanel.setLayout(new HorizontalLayout(10));
 		loginPanel.setPaddings(3);
-		
 		
 		TextField usernameField = new TextField("User: ", "username", 150);
 		usernameField.setMaxLength(15);
@@ -56,13 +62,21 @@ public class WelcomePanel extends Panel
 		loginPanel.add(passwordField);
 		loginPanel.add(loginButton);
 		
-		add(loginPanel);
+		loginPanel.add(getAboutButton());
 		
+//		panel.add(loginPanel, new ColumnLayoutData(0.5));
+//		panel.add(getAboutButton(), new ColumnLayoutData(0.5));
+		
+//		add(panel);
+		add(loginPanel);
 	}
 	
 	public void setLogoutView()
 	{
-		this.removeAll();
+//		Panel panel = new Panel();
+//		panel.setLayout(new ColumnLayout());
+		
+		removeAll();
 		
 		Panel logoutPanel = new Panel();
 		logoutPanel.setLayout(new HorizontalLayout(10));
@@ -79,6 +93,11 @@ public class WelcomePanel extends Panel
 		});
 
 		logoutPanel.add(logoutButton);
+		
+//		panel.add(logoutPanel, new ColumnLayoutData(0.5));
+//		panel.add(getAboutButton(), new ColumnLayoutData(0.5));
+		
+//		add(panel);
 		add(logoutPanel);
 	}
 	
@@ -86,9 +105,18 @@ public class WelcomePanel extends Panel
 	{
 		// TODO add flags and implement i18n
 		
-		Panel i18nPanel = new Panel();
-		i18nPanel.setLayout(new HorizontalLayout(10));
-		i18nPanel.setPaddings(3);
+		Panel panel = new Panel();
+		Image i = new Image();
+		panel.add(i);
+		
+//		HTMLPanel southPanel = new HTMLPanel("<p>south - generally for informational stuff, also could be for status bar</p>");
+//		southPanel.setHeight(100);
+//		southPanel.setCollapsible(true);
+//		southPanel.setTitle("South");
+//		
+//		HTML i18nPanel = new HTML();
+//		i18nPanel.setLayout(new HorizontalLayout(10));
+//		i18nPanel.setPaddings(3);
 		
 		
 		
@@ -100,10 +128,9 @@ public class WelcomePanel extends Panel
 		
 	}
 	
-	private void appendHelp()
+	private Button getAboutButton()
 	{
-		// TODO add help (window overlay with project- and usage info)
-		
+		return new AboutWindow().getButton();
 	}
 	
 	
