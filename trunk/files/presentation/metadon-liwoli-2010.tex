@@ -52,11 +52,6 @@
 \item \textbf{Location-based Content Management}
   \begin{itemize}
     \item Flexible \textit{Multimedia} Blogs Generation
-    \item Spatial- and temporal related \textit{Waypoints}
-    \item Resolution of Waypoints to \textit{User-friendly Identifiers}
-    \item Waypoint Tracking and Blog Exploration through a \textit{Cartographic User Interface}
-    \item \textit{Privacy} and \textit{Usability} Consideration
-    \item \textit{Persistent} Content and \textit{Batch-based} Processing on mobile Terminals
   \end{itemize}
 \end{itemize}
 }
@@ -78,10 +73,6 @@
   \item \textbf{Mobile Service-based Computing:} Flexible Integration
   with remote Functionality and Data on resource-limited Devices
   (cf. Sockets, Messaging Techniques)
-  \item \textbf{Location Awareness:} Foundation for advanced user-centric Services in the mobile Domain 
-  \item \textbf{Mobile Blogging:} Community-based Communication and convenient location-based Content Exploration
-  \item \textbf{Support:} Handhelds with KVM and optional \textit{Frameworks} (NWSF, WSA, J2ME Polish, etc.)
-  \item \textbf{Standards:} Reliable mobile-based cross-platform Interactions (OMA, OASIS, Parlay, WS-I, OSGi, etc.) 
 \end{itemize}
 }
 
@@ -101,25 +92,6 @@
 \includegraphics[width=0.8\textwidth]{images/figure_LBS_overview.png}
 }
 
-\frame
-{
-\frametitle{\textbf{Service Infrastructures}}
-\includegraphics[width=0.8\textwidth]{images/figure_MobServicePrototype.png}
-}
-
-\frame
-{
-\frametitle{\textbf{Utilized Services}}
-\begin{itemize}[<+-|alert@+>]
-  \item \textbf{Operator:} MLP-based technology-independent Location Service including cellular Network Facilities
-  \item \textbf{Device:} NMEA-based GPS Location Service for built-in or external Approaches
-  \item \textbf{Web:} WS-based Integration of Data and Functionality for Content Exploration Purposes
-  \begin{itemize}
-    \item REST-based \textit{Geonames WS} for retrieving nearby Places, highly accurate Elevation Values, etc.
-    \item SOAP-based \textit{Gateway WS} for User Authentications and the Delivery of Content into a Web Environment
-  \end{itemize}
-\end{itemize}
-}
 
 \frame
 {
@@ -131,17 +103,6 @@
     \item WS-I and WS-Security conform Implementation
     \item JAXP based Parsing and JAX-RPC-based SOAP Message Handling
   \end{itemize}
-\item \textbf{WSA for J2ME}
-  \begin{itemize}
-    \item WS-I conform Implementation
-    \item JAXP-based Parsing and JAX-RPC-based SOAP Message Handling
-  \end{itemize}
-\item \textbf{Location API for J2ME}
-  \begin{itemize}
-    \item Transparent Location Determination
-    \item Network/GPS-based
-  \end{itemize}
-\end{itemize}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -156,51 +117,7 @@
 \includegraphics[width=0.80\textwidth]{images/figure_concept.png}
 }
 
-\subsection{Domains}
-\frame
-{
-\frametitle{\textbf{Domains}}
-\begin{itemize}
-\item \color[rgb]{0.2,0.3,0.8} \textbf{Mobile Client Domain}
-  \begin{itemize}
-    \item \textbf{System:} User Settings, RMS, Capabilities, Usability, Locale
-    \item \textbf{Security:} Device Awareness, SSL, Online/Offline
-    \item \textbf{Content:} Generation, Browsing, Manipulation, Statistics
-    \item \textbf{Location:} Determination, Resolution, Relation
-    \item \textbf{Communication:} Content Transfer, Traffic Monitor 
-  \end{itemize}
-\item \textbf{Server- and Backend Systems Domain}
-  \begin{itemize}
-    \item \textbf{Blogging Service:} Mobile Authentication, Gateway 
-    \item \textbf{Web Application:} Registration/Authentication, Blog Loader
-    \item \textbf{Persistence:} RDBMS, Repository
-  \end{itemize}
-\item \textbf{Web Client Domain}
-  \begin{itemize}
-    \item \textbf{Integration:} AJAX, Request Scheduler, Waypoint/Blog
-    \item \textbf{Exploration:} Map, List, Blog Details
-  \end{itemize}
-\end{itemize}
-}
 
-\subsection{Architecture}
-\frame
-{
-\frametitle{\textbf{Architecture}}
-\includegraphics[width=0.8\textwidth]{images/figure_architecturePrototype.png}
-}
-
-\frame
-{
-\frametitle{\textbf{Architecture - Mobile Core Components}}
-\includegraphics[width=0.75\textwidth]{images/figure_architecture_mobile_managementPrototype.png}
-}
-
-\frame
-{
-\frametitle{\textbf{Architecture - Server Components}}
-\includegraphics[width=0.65\textwidth]{images/figure_architecture_serverPrototype.png}
-}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,78 +133,11 @@
 \item \textbf{Mobile Platform Constraints}
   \begin{itemize}[<+-|alert@+>]
     \item \color[rgb]{1.0,0.0,0.0} Multiple UI Platforms, varying native APIs
-    \item \color[rgb]{0.0,0.7,0.0} \textbf{Solution:}\\ Preprocessing, MMAPI- and Location API independent Blogs and Waypoints 
-    \item \color[rgb]{1.0,0.0,0.0} Errorous Firmware Versions
-    \item \color[rgb]{0.0,0.7,0.0} \textbf{Solution:}\\Platform Property and Capability Awarness
-    \item \color[rgb]{1.0,0.0,0.0} Limited Capabilities, Code Maintainability
-    \item \color[rgb]{0.0,0.7,0.0} \textbf{Solution:}\\Additional and optimized Data Types, adequate Software Design Pattern, few Container Types
   \end{itemize}
 \end{itemize}
 }
 
-\frame
-{
-\frametitle{\textbf{Challenges}}
-\begin{itemize}[<+-|alert@+>]
-\item \textbf{Mobile Content Management}
-  \begin{itemize}[<+-|alert@+>]
-    \item \color[rgb]{1.0,0.0,0.0} Large Blog Sets, Overhead through additional Frameworks
-    \item \color[rgb]{0.0,0.7,0.0} \textbf{Solution:}\\QoS Control, flexible building Process  
-    \item \color[rgb]{1.0,0.0,0.0} Responsiveness, Content Representation on Handsets
-    \item \color[rgb]{0.0,0.7,0.0} \textbf{Solution:}\\Blog caching, tabbed Forms, Screen Size Adaption
-  \end{itemize}
-\item \textbf{Service Interaction Constraints}
-  \begin{itemize}[<+-|alert@+>]
-    \item \color[rgb]{1.0,0.0,0.0} No SwA Support, Restrictions on Data Types
-    \item \color[rgb]{0.0,0.7,0.0} \textbf{Solution:}\\String Representation of binary Content, Server-side Blog Reconstruction, 1.33
-  \end{itemize}
-\end{itemize}
-}
 
-\subsection{Deployment}
-\frame
-{
-\frametitle{\textbf{Deployment}}
-\begin{itemize}
-\item \textbf{Mobile Platform}
-  \begin{itemize}
-    \item J2ME MIDP 2.0 and optional APIs\\(\texttt{WSA}, \texttt{MMAPI}, \texttt{Location}, \texttt{Bluetooth})
-    \item J2ME Polish (building, GUI, logging, etc.)
-  \end{itemize}
-\item \textbf{Static Platform}
-  \begin{itemize}
-    \item Apache Tomcat
-    \item Apache Axis2
-    \item Apache Struts
-    \item XStream
-    \item MySQL RDBMS
-  \end{itemize}
-\end{itemize}
-}
-
-\frame
-{
-\frametitle{\textbf{Foreseeable Service Infrastructures}}
-\begin{itemize}
-\item \textbf{OSGi-compliant Java Service Platform}
-  \begin{itemize}
-    \item Component-based universal Middleware for managing Distributed Systems (Eclipse, Apache, etc.)
-    \item Suiteable the integrate Mainframes/Small Devices and to discover Functionality on-the-fly
-    \item Over the Network Deployment and \textit{Hot Updates} (e.g. Nokia)
-    \item Minimizes the Memory Footprint / no closed Execution Container like MIDP2 or J2EE (true Terminals)
-  \end{itemize}
-\item \textbf{WSP and WSB for Handhelds}
-  \begin{itemize}
-    \item WSP and WSB not bound to the wired Domain
-    \item Device-centric Peer-to-Peer Service/Social Infrastructures
-  \end{itemize}
-\item \textbf{GPS and Wi-MAX Utilization}
-  \begin{itemize}
-    \item A-GPS (e.g. Japan), bypass cold start, built-in support
-    \item Ubiquitous Mobility, high Throughput
-  \end{itemize}
-\end{itemize}
-}
 
 
 
@@ -299,11 +149,6 @@
 \frametitle{\textbf{Summary}}
 \begin{itemize}
 \item \textbf{A Roadmap within Service-based Mobile Infrastructures for an agile Content Aggregation and Management in the Java Application Domain}
-\item Flexible User-centric-/Community based Application
-\item Expressive Inter-Domain Communication Utility 
-\item Location Awareness (e.g. personal Journey Logging, providing Options on been Places, etc.)
-\item Focus on Privacy and Misuse Prevention
-\item Memory Footprint!, many further Options (Utilizing Map features, Elevation Schemata, etc.)
 \end{itemize}
 }
 
