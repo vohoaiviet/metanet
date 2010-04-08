@@ -1,0 +1,41 @@
+METANET
+=======
+
+INTRO
+=====
+# the technical part of a project of the meta-don association: sociocultural studies in serbia called New[B]Order (http://www.meta-don.org/newborder/)
+# concept of a spatial knowledge network
+# web-based application for linking spatial and sematic data
+# based on free- and open source software components
+
+GOALS
+=====
+# flexiblity in usage: generic tool for scientific research projects
+# administration: intuitive CMS interface for researchers
+# METABLOG - artifacts input:
+			+ text, sound, images, an mm data through CMS
+			+ mobile devices for geo-tagged content input
+# METAMAP - 2D map for customized geo-spatial representation of artifacts
+# METASPACE - 3D semantic graph/subgraph associated with map artifacts
+# semi-automatic approach for finding similarities/references between artifacts
+# usability: advanced hardware and software interfaces to the user (e.g for exhibitions)
+# statistics
+
+CHALLENGES
+==========
+# customization of map for adequate content representation
+# data consistency between METAMAP and METASPACE
+# performance/usability aspects
+# METASPACE HCI design and implementation
+
+TECHNOLOGIES
+============
+# language: Java / JavaScript
+# dependencies:
+	- Semaspace (http://residence.aec.at/didi/FLweb/)
+	- OpenStreetMap aka OSM (http://www.openstreetmap.org/)
+	- Google Web Toolkit 2.0 aka GWT (http://code.google.com/webtoolkit/)
+
+
+
+
