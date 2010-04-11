@@ -17,7 +17,7 @@ GOALS
 			+ mobile devices for geo-tagged content input
 # METAMAP - 2D map for customized geo-spatial representation of artifacts
 # METASPACE - 3D semantic graph/subgraph associated with map artifacts
-# semi-automatic approach for finding similarities/references between artifacts
+# algorithms for finding similarities/references between artifacts
 # usability: advanced hardware and software interfaces to the user (e.g for exhibitions)
 # statistics
 
@@ -26,7 +26,7 @@ CHALLENGES
 # customization of map for adequate content representation
 # data consistency between METAMAP and METASPACE
 # performance/usability aspects
-# METASPACE HCI design and implementation
+# METASPACE hardware HCI design and implementation
 
 TECHNOLOGIES
 ============

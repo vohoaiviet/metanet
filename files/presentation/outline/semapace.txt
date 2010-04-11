@@ -1,3 +1,27 @@
 SEMASPACE
 =========
 
+# fast opengl accelerated graph editor and browser for large knowledge networks
+# developed by dietmar offenhuber and gerhard dirmoser - fh hagenberg
+# interactive graph layout in 2d and 3d
+# nodes can incorporate data such as images, sound and text
+# java swt desktop application
+# embedding into web clients with virtools webplayer
+# the network is represented by so called edge files
+# presentent at the ars electronica festival 2003
+# ui for web clients and exhibitions
+
+# dependencies
+	+ jogl: open source java binding to opengl api from sun (for harware supported 3d graphics)
+	+ jftgl: java based lib for accessing tt fonts within opengl
+	+ apache batik svg toolkit: open source java based toolkit for using images in the svg format (xml based)
+
+# extensions
+	+ video nodes
+	+ remote graph access and manipulation through network connections
+	+ research and implementation of extending hardware interfaces for browsing
+		- browsing (zoom, rotation)
+		- 2d/3d
+		- fog
+		- freeze
+		- node distance
