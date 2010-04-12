@@ -4,11 +4,12 @@ SEMASPACE
 # fast opengl accelerated graph editor and browser for large knowledge networks
 # developed by dietmar offenhuber and gerhard dirmoser - fh hagenberg
 # interactive graph layout in 2d and 3d
-# nodes can incorporate data such as images, sound and text
+# nodes can incorporate data such as images, sound and text (added while navigating the graph)
 # java swt desktop application
 # embedding into web clients with virtools webplayer
 # the network is represented by so called edge files
 # presentent at the ars electronica festival 2003
+# Gerhard Dirmoser creates complex large-scale wall diagrams on topics like 25 years of ars electronica or performance art
 # ui for web clients and exhibitions
 
 # dependencies

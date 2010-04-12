@@ -1,0 +1,8 @@
+edges	edges_Kategorien_PLUS.txt
+term	Echtzeit
+depth	3
+tags	tags.txt
+spritesize	1
+spritevar	1
+hidecap	FALSE
+hideimg	FALSE
