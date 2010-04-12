@@ -1,0 +1,26 @@
+KNOWLEDGE NETWORKS
+==================
+
+
+
+(http://www.knowledge-management-online.com/KnowledgeNetworks.html)
+# network of people with a high interest in learning, investigating, developing and improving the knowledge subject matter and share common work goals
+
+# The activities of an effective Community of Practice (COP) will result in the surfacing of much more of the hidden and locked knowledge that resides in our heads. An effective Community of Practice will enable members to more quickly leverage the knowledge that exists in this knowledge network
+
+# A Community of Interest (COI) is a Knowledge Network which is ‘looser’ than a Community of Practice. It may well be much larger in membership than a more focused Community of Practice. Nonetheless, it can significantly assist the knowledge worker in trying to obtain answers to knowledge needs.
+
+
+
+
+
+(http://www.springerlink.com/content/qkh8hyecby6glww5/)
+# Digital libraries serving multimedia information that may be accessed in terms of geographic content and relationships are creating special challenges and opportunities for networked information systems
+
+# define a geographic knowledge representation system (GKRS) in terms of a core set of services of the meta-information environment that is required in supporting concept-based access to collections of geospatial information
+
+# Our GKRS architecture loosely couples a variety of multimedia knowledge sources that are in part represented in terms of the semantic network and neural network representations developed in artificial intelligence research. Both textual analysis and image processing techniques are employed in creating these textual and iconic geographical knowledge structures.
+
+
+# socio-spatial knowledge network
+# the collective knowledge that is contained in the heads of the individuals (tacit knowledge)

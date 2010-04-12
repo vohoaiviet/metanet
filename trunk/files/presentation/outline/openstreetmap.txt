@@ -23,9 +23,9 @@ CREATING THE MAP
 		
 # Slippy Map: OSM default web interface for browsing rendered OSM data
 
-USE FOR OWN PURPOSES
-====================
-# integration in own web page like Google, Yahoo maps by using JS libs for customize the map and interface
+EMBEDDING
+=========
+# integration in web page like Google, Yahoo maps by using JS libs for customize the map and interface
 	- OpenLayers: feature-rich, open source, most popular for OSM maps, BSD lic. (www.openlayers.org)
 		+ dynamic map for the web page
 		+ displays tiles and markers from any source
@@ -33,8 +33,7 @@ USE FOR OWN PURPOSES
 		+ project of Open Source Geospatial Foundation (OSGeo)
 	- Mapstraction: JS lib wrapper for multiple implementations (e.g. OL, Google, etc.)
 # several project on google code with topic OSM on android
-
-integration of OL in GWT through open source project GWT-OpenLayers (http://sourceforge.net/projects/gwt-openlayers/)
+# integration of OL in GWT through open source project GWT-OpenLayers (http://sourceforge.net/projects/gwt-openlayers/)
 
 
 

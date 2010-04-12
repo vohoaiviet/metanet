@@ -7,8 +7,8 @@
 \usepackage[ngerman]{babel}
 \usepackage[ansinew]{inputenc}
 \usepackage{html,makeidx}
-%\usecolortheme{whale}
 
+\hypersetup{colorlinks=true,pagecolor=blue,urlcolor=blue} % linkcolor=green,filecolor=red
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,7 +22,8 @@
 \frame{\titlepage}
 
 % no entry in TOC but in the navigation bar
-\section*{overview}
+%\section*{overview}
+\setcounter{tocdepth}{1}
 \frame{\tableofcontents}
 
 
@@ -34,51 +35,76 @@
 \subsection{introduction}
 \frame
 {
-\frametitle{\textbf{introduction}}
+\frametitle{\textbf{project introduction}}
 \begin{itemize}
-\item the technical part of a project of the\textbf{ meta-d.o.n association}: sociocultural studies in serbia called \textbf{New[B]Order} - \htmladdnormallink{http://www.meta-don.org/newborder/}{http://www.meta-don.org/newborder/}
-\item concept of a spatial \textbf{knowledge network}
-\item web-based application for linking \textbf{spatial and sematic data}
-\item based on \textbf{free- and open source software components}
+\item the technical aspect of a project of the \textbf{Meta-D.O.N Association}: sociocultural studies in serbia called \textbf{New[B]Order} - \htmladdnormallink{http://www.meta-don.org/newborder/}{http://www.meta-don.org/newborder/}
+\item project on the topography of the centre-periphery-complex in post-communist Eastern Europe
+\item metastatic penetration of social spaces scientifically measured to create quantitative and qualitative indicators for social disintegration
 \end{itemize}
 }
+
+\frame
+{
+\frametitle{\textbf{project introduction}}
+\begin{itemize}
+	\item e.g. indicators
+	\begin{itemize}
+		\item privatization aspects of companies in serbia - \textbf{Freedom Fighters Collective} (\htmladdnormallink{http://www.freedomfight.net/cms/}{http://www.freedomfight.net/cms/})
+		\item subversive signs of the periphery
+		\item turbo folk politics
+	\end{itemize}
+	\item capture indicators cartographically with a link to a visual semantic database
+	\item concept of an interactive geo-spatial \textbf{knowledge network}
+	\item web application based on \textbf{free- and open source software components}
+\end{itemize}
+}
+
 
 \subsection{goal}
 \frame
 {
-\frametitle{\textbf{goal}}
+\frametitle{\textbf{project goal}}
 \begin{itemize}
 \item \textbf{flexiblity in usage:} generic tool for scientific research projects
 \item \textbf{administration:} intuitive CMS interface for researchers
-\item \textbf{METABLOG - artifacts input:}
+\item TODO
+\item algorithms for finding similarities/references between artifacts
+\item \textbf{usability:} advanced hardware and software interfaces to the user (e.g for exhibitions)
+\end{itemize}
+}
+
+
+\subsection{domains}
+\frame
+{
+\frametitle{\textbf{project domains}}
+\begin{itemize}
+\item \textbf{metablog - artifacts input:}
   \begin{itemize}
     \item text, sound, images, an mm data through CMS
     \item mobile devices for geo-tagged content input
   \end{itemize}
-\item \textbf{METAMAP: 2D map for customized geo-spatial representation of artifacts}
-\item \textbf{METASPACE: 3D semantic graph/subgraph associated with map artifacts}
-\item algorithms for finding similarities/references between artifacts
-\item \textbf{usability:} advanced hardware and software interfaces to the user (e.g for exhibitions)
-\item \textbf{statistics}
+\item \textbf{metamap:} 2D map for customized geo-spatial representation of artifacts
+\item \textbf{metaspace:} 2D/3D semantic graph/subgraph associated with map artifacts
 \end{itemize}
 }
 
 \frame
 {
-\frametitle{\textbf{domains}}
-\includegraphics[width=0.95\textwidth]{bin/domains/domains.png}
+\frametitle{\textbf{project domains}}
+\includegraphics[width=0.85\textwidth]{bin/domains/domains.png}
 }
 
 
 \subsection{challenges}
 \frame
 {
-\frametitle{\textbf{challenges}}
+\frametitle{\textbf{project challenges}}
 \begin{itemize}
 \item \textbf{customization of map} for adequate content representation
 \item \textbf{administration:} intuitive CMS interface for researchers
-\item \textbf{data consistency} between METAMAP and METASPACE
-\item \textbf{METASPACE hardware HCI} design and implementation
+\item \textbf{data consistency} between metamap and metaspace
+\item \textbf{metaspace hardware HCI} design and implementation
 \end{itemize}
 }
 
@@ -86,14 +112,14 @@
 \subsection{technologies}
 \frame
 {
-\frametitle{\textbf{technologies}}
+\frametitle{\textbf{project technologies}}
 \begin{itemize}
 \item \textbf{language:} java and java script
 \item \textbf{dependencies:}
   \begin{itemize}
-    \item \textbf{Semaspace} (http://residence.aec.at/didi/FLweb/)
-    \item \textbf{OpenStreetMap} aka OSM (http://www.openstreetmap.org/)
-    \item \textbf{Google Web Toolkit 2.0} aka GWT (http://code.google.com/webtoolkit/)
+    \item \textbf{Semaspace} (\htmladdnormallink{http://residence.aec.at/didi/FLweb/}{http://residence.aec.at/didi/FLweb/})
+    \item \textbf{OpenStreetMap} aka OSM (\htmladdnormallink{http://www.openstreetmap.org/}{http://www.openstreetmap.org/})
+    \item \textbf{Google Web Toolkit 2.0} aka (\htmladdnormallink{http://code.google.com/webtoolkit/}{http://code.google.com/webtoolkit/})
   \end{itemize}
 \end{itemize}
 }
@@ -102,30 +128,60 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO research:  knowledge network
+\section{knowledge networks}
+\subsection{theory}
+\frame
+{
+\frametitle{\textbf{knowledge networks theory}}
+\includegraphics[width=0.85\textwidth]{bin/semaspace/semaspace.png}
+}
+
+\frame
+{
+\frametitle{\textbf{knowledge networks theory}}
+\begin{itemize}
+	\item \textbf{TODO} 
+\end{itemize}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO research: virtools technical + developers
 \section{semaspace}
 \subsection{outline}
 \frame
 {
-\frametitle{\textbf{outline}}
+\frametitle{\textbf{semaspace outline}}
 \begin{itemize}
-	\item \textbf{fast opengl accelerated graph editor and browser} for large knowledge networks
-	\item developed by \textbf{dietmar offenhuber and gerhard dirmoser - fh hagenberg}
+	\item \textbf{fast opengl accelerated graph editor and browser} for large knowledge networks with more than 10000 text-fields
+	\item developed by \textbf{Dietmar Offenhuber and Gerhard Dirmoser - FH Hagenberg}
 	\item \textbf{interactive graph layout} in 2d and 3d
-	\item \textbf{nodes} can incorporate data such as images, sound and text
+	\item semaspace fills the gap between complex tools for network analysis and simple graph editors or mind-mapping tools (Dirmoser).
+	\item Gerhard Dirmoser creates complex large-scale wall diagrams on topics like \textbf{25 years of ars electronica or performance art} (2003)
+\end{itemize}
+}
+
+\subsection{outline}
+\frame
+{
+\frametitle{\textbf{semaspace outline}}
+\begin{itemize}
+	\item manually \textbf{define the nodes overall shape} of the network by placing and subsequently locking the position of individual nodes
+	\item \textbf{nodes} can incorporate data such as images, sound and text (added while navigating the graph)
+	\item ui for \textbf{web clients} and \textbf{exhibitions}
 	\item \textbf{java swt} desktop application
 	\item embedding into web clients with \textbf{virtools webplayer}
-	\item the network is represented by so called edge files
-	\item presentent at the \textbf{ars electronica festival 2003}
-	\item ui for \textbf{web clients} and \textbf{exhibitions}
 \end{itemize}
 }
 
 \subsection{dependencies}
 \frame
 {
-\frametitle{\textbf{dependencies}}
+\frametitle{\textbf{semaspace dependencies}}
 \begin{itemize}
 	\item \textbf{jogl:} open source java binding to opengl api from sun (for harware supported 3d graphics)
 	\item \textbf{jftgl:} java based lib for accessing tt fonts within opengl
@@ -138,14 +194,14 @@
 \subsection{extensions}
 \frame
 {
-\frametitle{\textbf{extensions}}
+\frametitle{\textbf{semaspace extensions}}
 \begin{itemize}
 	\item \textbf{video nodes}
 	\item \textbf{remote graph access and manipulation} through network connections
 	\item research and implementation of \textbf{extending hardware interfaces} for browsing
 		\begin{itemize}[<+-|alert@+>]
 			\item browsing (zoom, rotation)
-			\item 2d/3d
+			\item 2D/3D
 			\item fog
 			\item freeze
 			\item node distance
@@ -157,23 +213,108 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{openstreetmap}
+\subsection{outline}
+\frame
+{
+\frametitle{\textbf{OSM outline}}
+\begin{itemize}
+	\item \textbf{OSM: open source map solution} for web clients
+	\item everyone can extend the map
+	\item collecting GPS coordinates
+	\item like wikipedia for map
+	\item \textbf{no legal or technical restrictions} on their use - full creativity
+	\item other implementations do not allow highly customized overlays
+\end{itemize}
+}
 
+\subsection{strategy}
+\frame
+{
+\frametitle{\textbf{OSM creating data}}
+\begin{itemize}
+	\item \textbf{creating OSM data} with OSM map editors:
+	\begin{itemize}
+			\item java OSM (JOSM) - desktop app
+			\item potlatch - flash
+			\item merkaartor - for UNIX, WIN, MAC
+	\end{itemize}
+	\item \textbf{adding tags} (node, linear, area) for OSM data do be rendered and upload
+	\item \textbf{slippy map:} OSM default web interface for browsing rendered OSM data
+\end{itemize}
+}
 
+\frame
+{
+\frametitle{\textbf{OSM rendering}}
+\begin{itemize}
+\item \textbf{generating rendered graphics} on own computer by using tools:
+	\begin{itemize}
+			\item \textbf{kosmos:} lightweight OSM map rendering platform for WIN
+			\item \textbf{osmarender:} rendering platform for generating SVG image for OSM data based on XSLT
+			\item \textbf{mapnik:} opensource toolkit in c++ and pyhton, all OS platforms
+			\begin{itemize}
+				\item default for OSM - mapnik renders 256 x 256 px tiles served from the OSM tile server
+				\item XML file holds rendering props like color, withs of lines, etc.
+				\item rendered tiles are referenced by URLs through JS from web client
+				\item raw OSM data can be downloaded for setting up an own tile server (e.g. planet.osm)
+				\item uses PostgreSQL / PostGIS as spatial database (osm2pgsql converter)
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+}
 
-
-
-
-
-
-
-
+\subsection{embedding}
+\frame
+{
+\frametitle{\textbf{OSM embedding}}
+\begin{itemize}
+	\item \textbf{integration in web page} like Google, Yahoo maps by using JS libs for customize the map and interface
+	\begin{itemize}
+		\item \textbf{OpenLayers:} feature-rich, open source, most popular for OSM maps, BSD lic. (\htmladdnormallink{www.openlayers.org}{www.openlayers.org})
+		\begin{itemize}
+			\item dynamic map for the web page
+			\item displays tiles and markers from any source
+			\item separation between tools and data
+			\item project of Open Source Geospatial Foundation (OSGeo)
+		\end{itemize}
+		\item \textbf{Mapstraction:} JS lib wrapper for multiple implementations (e.g. OL, Google, etc.)
+	\end{itemize}
+	\item several project on google code with topic OSM on android
+	\item integration of OL in GWT through open source project \textbf{GWT-OpenLayers} (\htmladdnormallink{http://sourceforge.net/projects/gwt-openlayers/}{http://sourceforge.net/projects/gwt-openlayers/})
+\end{itemize}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section*{Summary}
+\section{realization}
+\subsection{architecture}
+\frame
+{
+\frametitle{\textbf{realization architecture}}
+\includegraphics[width=0.85\textwidth]{bin/architecture/component-diagram_update.png}
+}
+
+\subsection{interface}
+\frame
+{
+\frametitle{\textbf{realization interface}}
+\includegraphics[width=0.85\textwidth]{bin/features/metamap/01_gui_metamap_start_update.png}
+}
+
+\frame
+{
+\frametitle{\textbf{realization interface}}
+\includegraphics[width=0.85\textwidth]{bin/features/metamap/02_gui_metamap_admin_start_update.png}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section*{Summary}
 \frame
 {
 \frametitle{\textbf{Summary}}
