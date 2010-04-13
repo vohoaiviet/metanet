@@ -13,7 +13,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{METANET - Interactive Knowledge Network}
+\title{METANET - Distributed Interactive Knowledge Network}
 \institute[META-D.O.N]{META-D.O.N\\Association for Cultural Substitution Services}
 \author{Hannes Weingartner}
 \date{April 17, 2010}
@@ -37,7 +37,7 @@
 {
 \frametitle{\textbf{project introduction}}
 \begin{itemize}
-\item the technical aspect of a project of the \textbf{Meta-D.O.N Association}: sociocultural studies in serbia called \textbf{New[B]Order} - \htmladdnormallink{http://www.meta-don.org/newborder/}{http://www.meta-don.org/newborder/}
+\item \textbf{metanet:} the technical aspect of a project of the \textbf{Meta-D.O.N Association}: sociocultural studies in Serbia called \textbf{New[B]Order} - \htmladdnormallink{http://www.meta-don.org/newborder/}{http://www.meta-don.org/newborder/}
 \item project on the topography of the centre-periphery-complex in post-communist Eastern Europe
 \item metastatic penetration of social spaces scientifically measured to create quantitative and qualitative indicators for social disintegration
 \end{itemize}
@@ -49,7 +49,7 @@
 \begin{itemize}
 	\item e.g. indicators
 	\begin{itemize}
-		\item privatization aspects of companies in serbia - \textbf{Freedom Fighters Collective} (\htmladdnormallink{http://www.freedomfight.net/cms/}{http://www.freedomfight.net/cms/})
+		\item privatization aspects of companies in Serbia - \textbf{Freedom Fighters Collective} (\htmladdnormallink{http://www.freedomfight.net/cms/}{http://www.freedomfight.net/cms/})
 		\item subversive signs of the periphery
 		\item turbo folk politics
 	\end{itemize}
@@ -65,10 +65,11 @@
 {
 \frametitle{\textbf{project goal}}
 \begin{itemize}
+\item providing a tool for individuals and communities to get \textbf{connected to complex relationships of scientfic measurement} with cartographical aspects
+\item receiving a better \textbf{overall view of knowledge related to public areas} which can be meaningful for exploring topics of interests through the user
 \item \textbf{flexiblity in usage:} generic tool for scientific research projects
 \item \textbf{administration:} intuitive CMS interface for researchers
-\item TODO
-\item algorithms for finding similarities/references between artifacts
+\item smart algorithms for finding similarities/references between artifacts
 \item \textbf{usability:} advanced hardware and software interfaces to the user (e.g for exhibitions)
 \end{itemize}
 }
@@ -79,13 +80,14 @@
 {
 \frametitle{\textbf{project domains}}
 \begin{itemize}
+\item project consists of three \textbf{technical domains} 
 \item \textbf{metablog - artifacts input:}
   \begin{itemize}
-    \item text, sound, images, an mm data through CMS
+    \item text, sound, images, an mm data through web-based CMS
     \item mobile devices for geo-tagged content input
   \end{itemize}
-\item \textbf{metamap:} 2D map for customized geo-spatial representation of artifacts
-\item \textbf{metaspace:} 2D/3D semantic graph/subgraph associated with map artifacts
+\item \textbf{metamap:} 2D map for customized geographical representation of artifacts and transformation processes between them
+\item \textbf{metaspace:} 2D/3D semantic graph/subgraph associated with map artifacts for mapping the degree of connectivity between them
 \end{itemize}
 }
 
@@ -101,10 +103,11 @@
 {
 \frametitle{\textbf{project challenges}}
 \begin{itemize}
-\item \textbf{customization of map} for adequate content representation
-\item \textbf{administration:} intuitive CMS interface for researchers
-\item \textbf{data consistency} between metamap and metaspace
-\item \textbf{metaspace hardware HCI} design and implementation
+	\item \textbf{metaspace hardware HCI} design and implementation for a seamless exploration of data in the semantic space - extension to keyboard and mouse 
+	\item \textbf{customization of map} design and implementation of interactive icons and transformations -  extendable map APIs
+	\item \textbf{intuitive administration} and performative web CMS interface for knowledge workers - ajax based server interaction
+	\item \textbf{data consistency} between metamap and metaspace - network interface and structured graph datasets for synchronization
+	\item \textbf{complex algorithms} for dependency calculation based on meta data and severity - generating an ontology of data
 \end{itemize}
 }
 
@@ -114,20 +117,25 @@
 {
 \frametitle{\textbf{project technologies}}
 \begin{itemize}
-\item \textbf{language:} java and java script
-\item \textbf{dependencies:}
+\item \textbf{main aspect:} utilization of proofed open-source/free tools for adapting them to our needs  
+\item \textbf{dependencies on tools:}
   \begin{itemize}
     \item \textbf{Semaspace} (\htmladdnormallink{http://residence.aec.at/didi/FLweb/}{http://residence.aec.at/didi/FLweb/})
     \item \textbf{OpenStreetMap} aka OSM (\htmladdnormallink{http://www.openstreetmap.org/}{http://www.openstreetmap.org/})
-    \item \textbf{Google Web Toolkit 2.0} aka (\htmladdnormallink{http://code.google.com/webtoolkit/}{http://code.google.com/webtoolkit/})
+    \item \textbf{Google Web Toolkit 2.0} aka GWT (\htmladdnormallink{http://code.google.com/webtoolkit/}{http://code.google.com/webtoolkit/})
   \end{itemize}
+\item \textbf{language:}
+	\begin{itemize}
+		\item Java
+		\item Java Script
+	\end{itemize}
 \end{itemize}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO research:  knowledge network
+% TODO research:  knowledge network, maps
 \section{knowledge networks}
 \subsection{theory}
 \frame
@@ -140,7 +148,12 @@
 {
 \frametitle{\textbf{knowledge networks theory}}
 \begin{itemize}
-	\item \textbf{TODO} 
+	\item \textbf{knowledge representation and visual interfaces} (\htmladdnormallink{http://media.lbg.ac.at}{http://media.lbg.ac.at})
+	\begin{itemize}
+		\item \textbf{semantic networks} become readable if their structures are described through an ontology
+		\item \textbf{ontologies} are abstract knowledge models for describing used concepts and their possible relationships
+		\item interactive tools realize the generation of \textbf{smooth image of information} to take ambiguity and complexity into account
+	\end{itemize}
 \end{itemize}
 }
 
@@ -150,30 +163,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO research: virtools technical + developers
+
 \section{semaspace}
 \subsection{outline}
 \frame
 {
 \frametitle{\textbf{semaspace outline}}
 \begin{itemize}
-	\item \textbf{fast opengl accelerated graph editor and browser} for large knowledge networks with more than 10000 text-fields
-	\item developed by \textbf{Dietmar Offenhuber and Gerhard Dirmoser - FH Hagenberg}
-	\item \textbf{interactive graph layout} in 2d and 3d
-	\item semaspace fills the gap between complex tools for network analysis and simple graph editors or mind-mapping tools (Dirmoser).
-	\item Gerhard Dirmoser creates complex large-scale wall diagrams on topics like \textbf{25 years of ars electronica or performance art} (2003)
+	\item \textbf{fast OpenGL accelerated graph editor and browser} for large knowledge networks with more than 10000 text-fields
+	\item developed by \textbf{Dietmar Offenhuber and Gerhard Dirmoser} - Ludwig Boltzmann Institute for Media Art Research
+	\item \textbf{interactive graph layout} in 2D and 3D
+	\item 'semaspace fills the gap between complex tools for network analysis and simple graph editors or mind-mapping tools' (Dirmoser)
+	\item Gerhard Dirmoser creates complex large-scale wall diagrams on topics like \textbf{25 years of ARS Electronica or Performance Art} (2003)
 \end{itemize}
 }
 
-\subsection{outline}
+% TODO research: virtools technical + developers
 \frame
 {
 \frametitle{\textbf{semaspace outline}}
 \begin{itemize}
 	\item manually \textbf{define the nodes overall shape} of the network by placing and subsequently locking the position of individual nodes
 	\item \textbf{nodes} can incorporate data such as images, sound and text (added while navigating the graph)
-	\item ui for \textbf{web clients} and \textbf{exhibitions}
-	\item \textbf{java swt} desktop application
+	\item GUI for \textbf{web clients} and \textbf{exhibitions}
+	\item \textbf{Java SWT} desktop application
 	\item embedding into web clients with \textbf{virtools webplayer}
 \end{itemize}
 }
@@ -183,9 +196,9 @@
 {
 \frametitle{\textbf{semaspace dependencies}}
 \begin{itemize}
-	\item \textbf{jogl:} open source java binding to opengl api from sun (for harware supported 3d graphics)
-	\item \textbf{jftgl:} java based lib for accessing tt fonts within opengl
-	\item \textbf{apache batik svg toolkit:} open source java based toolkit for using images in the svg format (xml based)
+	\item \textbf{JOGL:} open source Java binding to OpenGL API from Sun (for harware supported 3D graphics)
+	\item \textbf{JFTGL:} java based lib for accessing tt fonts within OpengGL
+	\item \textbf{Apache batik SVG toolkit:} open source Java based toolkit for using images in the SVG format (XML based)
 	\item \textbf{\htmladdnormallink{semaspace demo}{file:///C:/Users/hn/Workspace-Java/metanet/files/presentation/bin/semaspace/web-demo/semaspace.html}}
 \end{itemize}
 }
@@ -197,7 +210,7 @@
 \frametitle{\textbf{semaspace extensions}}
 \begin{itemize}
 	\item \textbf{video nodes}
-	\item \textbf{remote graph access and manipulation} through network connections
+	\item \textbf{remote graph access and manipulation} through network connection and tagged datasets
 	\item research and implementation of \textbf{extending hardware interfaces} for browsing
 		\begin{itemize}[<+-|alert@+>]
 			\item browsing (zoom, rotation)
@@ -222,7 +235,7 @@
 	\item \textbf{OSM: open source map solution} for web clients
 	\item everyone can extend the map
 	\item collecting GPS coordinates
-	\item like wikipedia for map
+	\item like wikipedia for maps
 	\item \textbf{no legal or technical restrictions} on their use - full creativity
 	\item other implementations do not allow highly customized overlays
 \end{itemize}
@@ -252,7 +265,7 @@
 	\begin{itemize}
 			\item \textbf{kosmos:} lightweight OSM map rendering platform for WIN
 			\item \textbf{osmarender:} rendering platform for generating SVG image for OSM data based on XSLT
-			\item \textbf{mapnik:} opensource toolkit in c++ and pyhton, all OS platforms
+			\item \textbf{mapnik:} opensource toolkit in C++ and python, all OS platforms
 			\begin{itemize}
 				\item default for OSM - mapnik renders 256 x 256 px tiles served from the OSM tile server
 				\item XML file holds rendering props like color, withs of lines, etc.
