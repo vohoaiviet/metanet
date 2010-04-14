@@ -8,7 +8,7 @@
 \usepackage[ansinew]{inputenc}
 \usepackage{html,makeidx}
 
-\hypersetup{colorlinks=true,pagecolor=blue,urlcolor=blue} % linkcolor=green,filecolor=red
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=gray} % linkcolor=green,filecolor=red,pagecolor=blue
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,7 +26,7 @@
 \setcounter{tocdepth}{1}
 \frame{\tableofcontents}
 
-
+\hypersetup{linkcolor=white}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -37,7 +37,7 @@
 {
 \frametitle{\textbf{project introduction}}
 \begin{itemize}
-\item \textbf{metanet:} the technical aspect of a project of the \textbf{Meta-D.O.N Association}: sociocultural studies in Serbia called \textbf{New[B]Order} - \htmladdnormallink{http://www.meta-don.org/newborder/}{http://www.meta-don.org/newborder/}
+\item \textbf{METANET:} the technical aspect of a project of the \textbf{Meta-D.O.N Association}: sociocultural studies in Serbia called \textbf{New[B]Order} - \htmladdnormallink{http://www.meta-don.org/newborder/}{http://www.meta-don.org/newborder/}
 \item project on the topography of the centre-periphery-complex in post-communist Eastern Europe
 \item metastatic penetration of social spaces scientifically measured to create quantitative and qualitative indicators for social disintegration
 \end{itemize}
@@ -54,7 +54,7 @@
 		\item turbo folk politics
 	\end{itemize}
 	\item capture indicators cartographically with a link to a visual semantic database
-	\item concept of an interactive geo-spatial \textbf{knowledge network}
+	\item concept of an interactive geospatial \textbf{knowledge network}
 	\item web application based on \textbf{free- and open source software components}
 \end{itemize}
 }
@@ -135,7 +135,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO research:  knowledge network, maps
+% TODO research:  knowledge network, MAPS
 \section{knowledge networks}
 \subsection{theory}
 \frame
@@ -148,6 +148,23 @@
 {
 \frametitle{\textbf{knowledge networks theory}}
 \begin{itemize}
+	\item \textbf{what are knowledge networks?}
+	\begin{itemize}
+		\item \textbf{network of people} with a high interest in learning, investigating, developing and improving the knowledge subject matter and share common work goals
+		\item \textbf{enlarge the collective knowledge} of individuals (tacit knowledge)
+		\item \textbf{community of practice (COP):} model for a learning process of self organized individuals connected within social communities sharing same interests (Jean Lave)
+		\item activities of COP members usually bring \textbf{hidden and locked knowledge to light} that resides in our heads
+		\item COP will enable members to more \textbf{quickly leverage the knowledge} that exists in a knowledge network
+	\end{itemize}
+	(\htmladdnormallink{http://www.ewenger.com/theory/}{http://www.ewenger.com/theory/})
+\end{itemize}
+}
+
+\frame
+{
+\frametitle{\textbf{knowledge networks theory}}
+\begin{itemize}
+	\item \textbf{community of interest (COI):} knowledge network which is 'looser' than COP - larger in membership - can significantly \textbf{assist the knowledge worker} in trying to obtain answers to knowledge needs
 	\item \textbf{knowledge representation and visual interfaces} (\htmladdnormallink{http://media.lbg.ac.at}{http://media.lbg.ac.at})
 	\begin{itemize}
 		\item \textbf{semantic networks} become readable if their structures are described through an ontology
@@ -156,9 +173,6 @@
 	\end{itemize}
 \end{itemize}
 }
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,8 +211,8 @@
 \frametitle{\textbf{semaspace dependencies}}
 \begin{itemize}
 	\item \textbf{JOGL:} open source Java binding to OpenGL API from Sun (for harware supported 3D graphics)
-	\item \textbf{JFTGL:} java based lib for accessing tt fonts within OpengGL
-	\item \textbf{Apache batik SVG toolkit:} open source Java based toolkit for using images in the SVG format (XML based)
+	\item \textbf{JFTGL:} java based lib for accessing TT fonts within OpengGL
+	\item \textbf{Apache Batik SVG toolkit:} open source Java based toolkit for using images in the SVG format (XML based)
 	\item \textbf{\htmladdnormallink{semaspace demo}{file:///C:/Users/hn/Workspace-Java/metanet/files/presentation/bin/semaspace/web-demo/semaspace.html}}
 \end{itemize}
 }
@@ -211,13 +225,14 @@
 \begin{itemize}
 	\item \textbf{video nodes}
 	\item \textbf{remote graph access and manipulation} through network connection and tagged datasets
-	\item research and implementation of \textbf{extending hardware interfaces} for browsing
+	\item research and implementation of \textbf{extending hardware interfaces} for...
 		\begin{itemize}[<+-|alert@+>]
 			\item browsing (zoom, rotation)
 			\item 2D/3D
 			\item fog
 			\item freeze
 			\item node distance
+			\item collapsing
 		\end{itemize}
 \end{itemize}
 }
@@ -248,9 +263,9 @@
 \begin{itemize}
 	\item \textbf{creating OSM data} with OSM map editors:
 	\begin{itemize}
-			\item java OSM (JOSM) - desktop app
-			\item potlatch - flash
-			\item merkaartor - for UNIX, WIN, MAC
+			\item Java OSM (JOSM) - desktop app
+			\item Potlatch - flash
+			\item Merkaartor - for UNIX, WIN, MAC
 	\end{itemize}
 	\item \textbf{adding tags} (node, linear, area) for OSM data do be rendered and upload
 	\item \textbf{slippy map:} OSM default web interface for browsing rendered OSM data
@@ -332,7 +347,14 @@
 {
 \frametitle{\textbf{Summary}}
 \begin{itemize}
-\item \textbf{METANET - Interactive Knowledge Network}
+\item \textbf{METANET - Distributed Interactive Knowledge Network}
+	\begin{itemize}
+		\item a project of \textbf{Meta-D.O.N}: sociocultural studies in Serbia
+		\item tool for individuals and communities to get a \textbf{smooth image of social spaces} for taking ambiguity and complexity into account
+		\item utilization of proofed open-source/free tools for adapting them to our needs (semaspace, OSM, GWT)
+		\item reference project: \textbf{A geographic knowledge representation system for multimedia geospatial retrieval and analysis}
+		(\htmladdnormallink{http://www.springerlink.com/content/qkh8hyecby6glww5/}{http://www.springerlink.com/content/qkh8hyecby6glww5/})
+	\end{itemize}
 \end{itemize}
 }
 
