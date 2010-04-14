@@ -1,8 +1,0 @@
-IMPLEMENTATION
-==============
-
-# domains
-# architecture
-# metablog mobile example
-# association with serbia
-

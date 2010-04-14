@@ -1,8 +1,0 @@
-GWT
-===
-# highly functional and portable web applications based on java
-# usage of proofed js libs like EXT
-# TODO ext outline
-# no need to write java script
-# full debugging
-# event listener based presentation logic similar to SWT
